@@ -20,21 +20,21 @@
   --color-surface-bright:            #393939;
   --color-surface-variant:           #353534;
   --color-on-surface:                #e5e2e1;
-  --color-on-surface-variant:        #c2c6d8;
+  --color-on-surface-variant:        #b0bec5;
   --color-on-background:             #e5e2e1;
 
-  --color-primary:                   #adc6ff;
-  --color-primary-container:         #006de6;
-  --color-on-primary:                #002e69;
-  --color-on-primary-container:      #f7f7ff;
-  --color-primary-fixed:             #d8e2ff;
-  --color-primary-fixed-dim:         #adc6ff;
-  --color-inverse-primary:           #005bc1;
+  --color-primary:                   #26c6da;
+  --color-primary-container:         #0097a7;
+  --color-on-primary:                #003f47;
+  --color-on-primary-container:      #e0f7fa;
+  --color-primary-fixed:             #b2ebf2;
+  --color-primary-fixed-dim:         #26c6da;
+  --color-inverse-primary:           #006064;
 
-  --color-secondary:                 #b3c5ff;
-  --color-secondary-container:       #284386;
-  --color-on-secondary:              #0a2c6e;
-  --color-on-secondary-container:    #9ab3fd;
+  --color-secondary:                 #4dd0e1;
+  --color-secondary-container:       #00838f;
+  --color-on-secondary:              #003438;
+  --color-on-secondary-container:    #b2ebf2;
 
   --color-tertiary:                  #ffb59d;
   --color-tertiary-container:        #cc4204;
@@ -95,26 +95,26 @@
 }
 
 .hero-gradient-text {
-  background: linear-gradient(135deg, #adc6ff 0%, #006de6 100%);
+  background: linear-gradient(135deg, #26c6da 0%, #0097a7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #adc6ff 0%, #006de6 100%);
-  color: #002e69;
+  background: linear-gradient(135deg, #26c6da 0%, #0097a7 100%);
+  color: #003f47;
   font-weight: 700;
   transition: box-shadow 0.3s ease;
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 28px rgba(0, 109, 230, 0.35);
+  box-shadow: 0 0 28px rgba(0, 151, 167, 0.4);
 }
 
 .btn-secondary {
   border: 1px solid #424656;
-  color: #adc6ff;
+  color: #26c6da;
   font-weight: 700;
   transition: background-color 0.2s ease;
 }
@@ -170,7 +170,7 @@
 }
 
 .prose-legal a {
-  color: #adc6ff;
+  color: #26c6da;
   text-decoration: underline;
   font-weight: 500;
 }
