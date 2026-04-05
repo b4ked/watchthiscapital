@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const legalLinks = [
   { href: "/privacy-policy", label: "Privacy Policy" },
@@ -23,13 +22,9 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-6 md:px-10 py-16 max-w-screen-xl mx-auto">
         {/* Brand */}
         <div className="md:col-span-2">
-          <Image
-            src="/logo.png"
-            alt="Watch This Capital"
-            width={200}
-            height={48}
-            className="h-8 w-auto object-contain opacity-80 mb-5"
-          />
+          <p className="text-xl font-black text-white font-headline mb-4">
+            Watch This Capital
+          </p>
           <p className="text-sm leading-relaxed text-on-surface-variant max-w-sm">
             We build trusted content and comparison resources in UK regulated
             markets — helping people make confident, informed decisions without

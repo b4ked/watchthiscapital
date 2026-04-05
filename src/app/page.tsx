@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Globe, Shield, TrendingUp } from "lucide-react";
 import PortfolioCard from "@/components/PortfolioCard";
 import { portfolioSites } from "@/lib/portfolio";
@@ -79,6 +80,17 @@ export default function HomePage() {
           <div className="lg:col-span-5 relative">
             <div className="bg-surface-container-low p-8 rounded-2xl relative z-10 border border-white/5 lg:rotate-1">
               <div className="space-y-6">
+                {/* Logo */}
+                <div className="flex justify-center pb-2">
+                  <Image
+                    src="/logo.png"
+                    alt="Watch This Capital"
+                    width={340}
+                    height={180}
+                    className="w-full max-w-[280px] h-auto object-contain"
+                    priority
+                  />
+                </div>
                 <div>
                   <div className="h-0.5 w-12 bg-primary-container mb-6" />
                   <p className="text-xs font-headline font-bold uppercase tracking-[0.2em] text-primary mb-2">

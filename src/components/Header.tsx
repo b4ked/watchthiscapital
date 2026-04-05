@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -17,16 +16,11 @@ export default function Header() {
   return (
     <header className="fixed top-0 w-full z-50 glass-nav border-b border-white/5 shadow-2xl shadow-blue-900/10">
       <div className="flex justify-between items-center px-6 md:px-10 py-4 max-w-screen-xl mx-auto">
-        {/* Logo */}
+        {/* Wordmark */}
         <Link href="/" className="group" aria-label="Watch This Capital home">
-          <Image
-            src="/logo.png"
-            alt="Watch This Capital"
-            width={200}
-            height={48}
-            className="h-9 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300"
-            priority
-          />
+          <span className="text-xl font-bold tracking-tight text-white font-headline group-hover:text-primary transition-colors duration-300">
+            Watch This Capital
+          </span>
         </Link>
 
         {/* Desktop nav */}
