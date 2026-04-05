@@ -4,62 +4,77 @@ import { Mail, Building2 } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Watch This Capital. We work with software vendors, financial services providers, and other businesses who want to reach informed UK audiences.",
+    "Partner with Watch This Capital. We work with software vendors and financial services providers who want to reach high-intent UK audiences.",
 };
 
 export default function ContactPage() {
   return (
-    <main>
-      {/* Hero */}
-      <section className="wtc-hero-gradient text-white py-16 md:py-20">
-        <div className="page-container">
+    <main className="pt-20">
+      {/* ── Hero ── */}
+      <section className="relative px-6 md:px-10 py-28 overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-container/10 blur-[100px] rounded-full pointer-events-none" />
+        <div className="max-w-screen-xl mx-auto">
           <div className="max-w-2xl">
-            <p className="text-[#d97706] text-xs font-semibold uppercase tracking-widest mb-3">Contact</p>
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Get in touch</h1>
-            <p className="text-white/70 leading-relaxed">
-              We work with software vendors, financial services providers, and specialist businesses
-              who want to reach high-intent UK audiences. We also hear from readers with questions
-              or feedback about our sites.
+            <span className="inline-block py-1 px-3 mb-6 border border-primary/20 bg-primary/5 text-primary text-[10px] font-bold tracking-widest uppercase rounded-sm">
+              Contact
+            </span>
+            <h1 className="text-5xl md:text-7xl font-headline font-bold leading-[0.9] tracking-tighter text-white mb-8">
+              Talk to us.
+            </h1>
+            <p className="text-xl text-on-surface-variant font-light leading-relaxed">
+              We work with software vendors and financial services providers who
+              want to reach informed, high-intent UK audiences. We also hear from
+              readers with questions or feedback about our sites.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="page-container">
-          <div className="max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-10">
+      {/* ── Contact options ── */}
+      <section className="py-20 px-6 md:px-10 bg-surface-container-low">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
             {/* General */}
-            <div className="flex flex-col gap-4">
-              <div className="w-10 h-10 bg-[#0f2340]/5 rounded-lg flex items-center justify-center">
-                <Mail size={20} className="text-[#d97706]" />
+            <div className="bg-surface-container p-8 rounded-xl flex flex-col gap-5">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                <Mail size={20} className="text-primary" />
               </div>
-              <h2 className="text-xl font-bold text-slate-900">General enquiries</h2>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                For questions about Watch This Capital, our editorial approach, or to report an
-                inaccuracy on one of our sites, email us directly.
-              </p>
+              <div>
+                <h2 className="text-xl font-headline font-bold text-white mb-3">
+                  General enquiries
+                </h2>
+                <p className="text-sm text-on-surface-variant leading-relaxed">
+                  Questions about Watch This Capital, our editorial approach, or
+                  to report an inaccuracy on one of our sites.
+                </p>
+              </div>
               <a
                 href="mailto:hello@watchthiscapital.com"
-                className="text-sm font-semibold text-[#1e3a5f] hover:text-[#0f2340] transition-colors"
+                className="text-sm font-bold text-primary hover:text-primary-fixed transition-colors font-headline uppercase tracking-widest"
               >
                 hello@watchthiscapital.com
               </a>
             </div>
 
             {/* Commercial */}
-            <div className="flex flex-col gap-4">
-              <div className="w-10 h-10 bg-[#0f2340]/5 rounded-lg flex items-center justify-center">
-                <Building2 size={20} className="text-[#d97706]" />
+            <div className="bg-surface-container p-8 rounded-xl flex flex-col gap-5">
+              <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                <Building2 size={20} className="text-primary" />
               </div>
-              <h2 className="text-xl font-bold text-slate-900">Commercial partnerships</h2>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                We work with software vendors and financial services providers who want to be
-                featured on our sites. If your product is genuinely good and a fit for one of our
-                audiences, we want to hear from you.
-              </p>
+              <div>
+                <h2 className="text-xl font-headline font-bold text-white mb-3">
+                  Commercial partnerships
+                </h2>
+                <p className="text-sm text-on-surface-variant leading-relaxed">
+                  If your product is genuinely the right fit for one of our
+                  audiences, we will give it a fair assessment and a proper
+                  audience. We work with vendors who can stand independent
+                  editorial scrutiny.
+                </p>
+              </div>
               <a
                 href="mailto:partnerships@watchthiscapital.com"
-                className="text-sm font-semibold text-[#1e3a5f] hover:text-[#0f2340] transition-colors"
+                className="text-sm font-bold text-primary hover:text-primary-fixed transition-colors font-headline uppercase tracking-widest"
               >
                 partnerships@watchthiscapital.com
               </a>
@@ -67,13 +82,19 @@ export default function ContactPage() {
           </div>
 
           {/* Note */}
-          <div className="max-w-3xl mt-12 bg-slate-50 rounded-xl p-6 border border-slate-200">
-            <p className="text-sm text-slate-600 leading-relaxed">
-              <strong className="text-slate-800">A note on commercial relationships:</strong> We disclose all commercial partnerships
-              and affiliate arrangements on the relevant sites. Being featured on one of our sites does
-              not guarantee a positive review. Our editorial assessments are independent of our commercial
-              arrangements. See our{" "}
-              <a href="/affiliate-disclosure" className="text-[#1e3a5f] underline font-medium">
+          <div className="max-w-3xl mt-10 bg-surface-container-high rounded-xl p-6 border border-outline-variant/20">
+            <p className="text-sm text-on-surface-variant leading-relaxed">
+              <span className="text-white font-semibold">
+                On commercial relationships:
+              </span>{" "}
+              Every partnership and affiliate arrangement on our sites is
+              disclosed. Being featured does not guarantee a positive assessment.
+              Our editorial judgement is not for sale — that is what makes a
+              listing on one of our sites worth having. See our{" "}
+              <a
+                href="/affiliate-disclosure"
+                className="text-primary underline font-medium"
+              >
                 Affiliate Disclosure
               </a>{" "}
               for full details.

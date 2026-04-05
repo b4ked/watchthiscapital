@@ -18,7 +18,7 @@ const statusConfig = {
     icon: <Clock size={10} className="inline mr-1" />,
   },
   planned: {
-    label: "Planned",
+    label: "Market identified",
     className:
       "bg-on-surface-variant/10 text-on-surface-variant border border-outline-variant/30",
     icon: <Clock size={10} className="inline mr-1" />,

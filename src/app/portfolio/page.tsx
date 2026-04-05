@@ -5,7 +5,7 @@ import { portfolioSites } from "@/lib/portfolio";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Watch This Capital's portfolio of trusted content and comparison websites for UK regulated markets. Live sites and upcoming launches.",
+    "Watch This Capital's market positions — independent, authoritative resources in UK regulated markets where trust is structurally absent.",
 };
 
 export default function PortfolioPage() {
@@ -22,18 +22,19 @@ export default function PortfolioPage() {
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
           <div className="lg:col-span-8">
             <span className="inline-block py-1 px-3 mb-6 border border-primary/20 bg-primary/5 text-primary text-[10px] font-bold tracking-widest uppercase rounded-sm">
-              Portfolio 2025
+              Market positions
             </span>
             <h1 className="text-5xl md:text-7xl font-headline font-bold leading-[0.9] tracking-tighter text-white mb-8">
-              The sites we{" "}
+              These are our{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">
-                build.
+                positions.
               </span>
             </h1>
             <p className="text-lg text-on-surface-variant max-w-xl leading-relaxed">
-              Each site focuses on a specific regulated market and audience.
-              Every one is built to the same standards of accuracy, transparency,
-              and editorial independence.
+              Each represents a regulated market where trust is structurally
+              absent. We identified the gap, built the authoritative resource,
+              and own it — with fully disclosed, editorially-independent
+              commercial relationships.
             </p>
           </div>
 
@@ -44,7 +45,7 @@ export default function PortfolioPage() {
                   {portfolioSites.length}
                 </div>
                 <div className="text-xs uppercase tracking-widest text-primary font-bold font-headline">
-                  Sites in portfolio
+                  Active market positions
                 </div>
               </div>
               <div className="absolute -right-4 -bottom-4 opacity-5">
@@ -68,7 +69,7 @@ export default function PortfolioPage() {
                   Live
                 </span>
                 <h2 className="text-2xl font-headline font-bold text-white">
-                  Published sites
+                  Active positions
                 </h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -86,7 +87,7 @@ export default function PortfolioPage() {
                   In Development
                 </span>
                 <h2 className="text-2xl font-headline font-bold text-white">
-                  Sites in development
+                  Building now
                 </h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -101,14 +102,13 @@ export default function PortfolioPage() {
             <section>
               <div className="mb-8">
                 <span className="inline-block px-3 py-1 border border-outline-variant/30 bg-on-surface-variant/5 text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-sm mb-4 font-headline">
-                  Planned
+                  Market identified
                 </span>
                 <h2 className="text-2xl font-headline font-bold text-white">
-                  Sites in the pipeline
+                  Markets we are moving into
                 </h2>
                 <p className="text-on-surface-variant text-sm mt-2">
-                  Research and planning underway. Domain registration and
-                  timelines confirmed.
+                  Market thesis validated. Domain registered. Build sequenced.
                 </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

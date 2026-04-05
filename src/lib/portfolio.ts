@@ -6,7 +6,7 @@ export const portfolioSites: PortfolioSite[] = [
     domain: "soletraderguide.co.uk",
     url: "https://soletraderguide.co.uk",
     description:
-      "The UK's practical guide to Making Tax Digital for Income Tax. Helps sole traders understand MTD obligations, compare compliant software, and navigate the 2026–2028 rollout without jargon.",
+      "4.2 million UK sole traders face mandatory MTD compliance from 2026. We built the independent guide before the rush — obligations, compliant software comparisons, rollout timelines — with no agenda beyond accuracy.",
     category: "Tax & Compliance",
     status: "live",
     launchYear: 2025,
@@ -16,7 +16,7 @@ export const portfolioSites: PortfolioSite[] = [
     domain: "equityreleaseguide.co.uk",
     url: "https://equityreleaseguide.co.uk",
     description:
-      "Independent guidance on equity release for UK homeowners aged 55+. Compares plans, explains risks, and helps readers make informed decisions about releasing property wealth.",
+      "3.2 million UK homeowners aged 55+ are eligible for equity release. The market moves £6B annually. There is no independent guide they can actually trust. That is the gap we are building into.",
     category: "Personal Finance",
     status: "planned",
   },
@@ -25,7 +25,7 @@ export const portfolioSites: PortfolioSite[] = [
     domain: "freelancerfinancehub.co.uk",
     url: "https://freelancerfinancehub.co.uk",
     description:
-      "A comprehensive financial resource for the UK's 5 million self-employed people. Covers accounting, banking, insurance, pensions, and IR35.",
+      "5 million self-employed people navigating IR35, MTD, pension gaps, and inadequate banking — with no single independent resource that covers all of it. That is the position.",
     category: "Self-Employed Finance",
     status: "planned",
   },
@@ -34,7 +34,7 @@ export const portfolioSites: PortfolioSite[] = [
     domain: "tradesguide.co.uk",
     url: "https://tradesguide.co.uk",
     description:
-      "Software, compliance, and tools guidance for UK trades businesses. Covers CIS, field service software, job management, and sole trader accounting for tradespeople.",
+      "The UK trades sector is chronically under-served by every financial and compliance resource that exists. CIS, VAT thresholds, field service software, sole trader accounting — one authoritative, independent place.",
     category: "Trades & Construction",
     status: "planned",
   },
