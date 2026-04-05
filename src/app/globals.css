@@ -4,74 +4,60 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
+  /* ── Typography ── */
+  --font-sans:     var(--font-inter);
+  --font-headline: var(--font-headline);
 
-  /* Watch This Capital brand colours */
-  --color-brand: #1e3a5f;
-  --color-brand-dark: #0f2340;
-  --color-brand-light: #e8f0f9;
-  --color-gold: #d97706;
-  --color-gold-light: #fef3c7;
-}
+  /* ── Deep Space colour system (from stitch design) ── */
+  --color-background:                #131313;
+  --color-surface:                   #131313;
+  --color-surface-dim:               #131313;
+  --color-surface-container-lowest:  #0e0e0e;
+  --color-surface-container-low:     #1c1b1b;
+  --color-surface-container:         #201f1f;
+  --color-surface-container-high:    #2a2a2a;
+  --color-surface-container-highest: #353534;
+  --color-surface-bright:            #393939;
+  --color-surface-variant:           #353534;
+  --color-on-surface:                #e5e2e1;
+  --color-on-surface-variant:        #c2c6d8;
+  --color-on-background:             #e5e2e1;
 
-:root {
-  --background: oklch(0.985 0.003 247);
-  --foreground: oklch(0.145 0.025 247);
+  --color-primary:                   #adc6ff;
+  --color-primary-container:         #006de6;
+  --color-on-primary:                #002e69;
+  --color-on-primary-container:      #f7f7ff;
+  --color-primary-fixed:             #d8e2ff;
+  --color-primary-fixed-dim:         #adc6ff;
+  --color-inverse-primary:           #005bc1;
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0.025 247);
+  --color-secondary:                 #b3c5ff;
+  --color-secondary-container:       #284386;
+  --color-on-secondary:              #0a2c6e;
+  --color-on-secondary-container:    #9ab3fd;
 
-  --primary: oklch(0.28 0.06 240);
-  --primary-foreground: oklch(0.985 0 0);
+  --color-tertiary:                  #ffb59d;
+  --color-tertiary-container:        #cc4204;
+  --color-on-tertiary:               #5d1900;
 
-  --secondary: oklch(0.94 0.015 240);
-  --secondary-foreground: oklch(0.28 0.06 240);
+  --color-outline:                   #8c90a1;
+  --color-outline-variant:           #424656;
 
-  --muted: oklch(0.96 0.008 247);
-  --muted-foreground: oklch(0.52 0.025 247);
+  --color-error:                     #ffb4ab;
+  --color-error-container:           #93000a;
 
-  --accent: oklch(0.94 0.015 240);
-  --accent-foreground: oklch(0.28 0.06 240);
-
-  --border: oklch(0.9 0.01 247);
-  --input: oklch(0.9 0.01 247);
-  --ring: oklch(0.55 0.12 50);
-
-  --radius: 0.5rem;
-
-  /* WTC brand */
-  --brand: #1e3a5f;
-  --brand-dark: #0f2340;
-  --brand-light: #e8f0f9;
-  --gold: #d97706;
-  --gold-light: #fef3c7;
+  --color-inverse-surface:           #e5e2e1;
+  --color-inverse-on-surface:        #313030;
 }
 
 @layer base {
   * {
-    @apply border-border;
+    box-sizing: border-box;
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: #131313;
+    color: #e5e2e1;
+    font-family: var(--font-sans, "Inter", sans-serif);
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   html {
@@ -80,25 +66,18 @@
 }
 
 /* ============================================================
-   LAYOUT UTILITIES
+   LAYOUT
    ============================================================ */
 
 .page-container {
-  max-width: 72rem;
+  max-width: 80rem;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-@media (min-width: 640px) {
-  .page-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .page-container {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -106,30 +85,52 @@
 }
 
 /* ============================================================
-   BRAND COMPONENTS
+   DESIGN SYSTEM UTILITIES
    ============================================================ */
 
-.wtc-hero-gradient {
-  background: linear-gradient(135deg, #0f2340 0%, #1e3a5f 50%, #1a3354 100%);
+.glass-nav {
+  background: rgba(19, 19, 19, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
-.card-lift {
-  transition: transform 0.2s, box-shadow 0.2s;
+.hero-gradient-text {
+  background: linear-gradient(135deg, #adc6ff 0%, #006de6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.card-lift:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+.btn-primary {
+  background: linear-gradient(135deg, #adc6ff 0%, #006de6 100%);
+  color: #002e69;
+  font-weight: 700;
+  transition: box-shadow 0.3s ease;
 }
 
-.gold-accent {
-  color: #d97706;
+.btn-primary:hover {
+  box-shadow: 0 0 28px rgba(0, 109, 230, 0.35);
 }
+
+.btn-secondary {
+  border: 1px solid #424656;
+  color: #adc6ff;
+  font-weight: 700;
+  transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #2a2a2a;
+}
+
+/* ============================================================
+   PROSE (LEGAL PAGES)
+   ============================================================ */
 
 .prose-legal p {
   line-height: 1.75;
   margin-bottom: 1rem;
-  color: oklch(0.25 0.025 247);
+  color: #c2c6d8;
 }
 
 .prose-legal h2 {
@@ -137,9 +138,9 @@
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
-  color: oklch(0.145 0.025 247);
+  color: #e5e2e1;
   padding-bottom: 0.375rem;
-  border-bottom: 1px solid oklch(0.9 0.01 247);
+  border-bottom: 1px solid #424656;
 }
 
 .prose-legal h3 {
@@ -147,7 +148,7 @@
   font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
-  color: oklch(0.2 0.04 247);
+  color: #e5e2e1;
 }
 
 .prose-legal ul {
@@ -165,16 +166,16 @@
 .prose-legal li {
   margin-bottom: 0.375rem;
   line-height: 1.7;
-  color: oklch(0.25 0.025 247);
+  color: #c2c6d8;
 }
 
 .prose-legal a {
-  color: #1e3a5f;
+  color: #adc6ff;
   text-decoration: underline;
   font-weight: 500;
 }
 
 .prose-legal strong {
   font-weight: 600;
-  color: oklch(0.145 0.025 247);
+  color: #e5e2e1;
 }

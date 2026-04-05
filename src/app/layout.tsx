@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-headline",
   display: "swap",
 });
 
@@ -31,8 +37,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" className={inter.variable}>
-      <body className="min-h-screen flex flex-col antialiased">
+    <html
+      lang="en-GB"
+      className={`dark ${inter.variable} ${spaceGrotesk.variable}`}
+    >
+      <body className="min-h-screen flex flex-col antialiased bg-surface text-on-surface">
         <Header />
         <div className="flex-1">{children}</div>
         <Footer />
