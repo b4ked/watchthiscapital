@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   description:
     "Watch This Capital builds trusted content and comparison resources in UK regulated markets, helping people make confident, informed decisions.",
   metadataBase: new URL("https://watchthiscapital.com"),
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+  },
   openGraph: {
     siteName: "Watch This Capital",
     locale: "en_GB",
