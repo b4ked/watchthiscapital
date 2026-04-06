@@ -81,10 +81,10 @@ export default function HomePage() {
               <div className="space-y-6">
                 <div className="flex justify-center pb-2">
                   <Image
-                    src="/logo.png"
+                    src="/logo-transparent.png"
                     alt="Watch This Capital"
                     width={340}
-                    height={180}
+                    height={200}
                     className="w-full max-w-[280px] h-auto object-contain"
                     priority
                   />
