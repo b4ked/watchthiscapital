@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import FadeUp from "@/components/FadeUp";
 
 export const metadata: Metadata = {
   title: "About",
@@ -38,7 +39,7 @@ export default function AboutPage() {
       <section className="relative px-6 md:px-10 py-28 overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary-container/10 blur-[100px] rounded-full pointer-events-none" />
         <div className="max-w-screen-xl mx-auto">
-          <div className="max-w-3xl">
+          <FadeUp className="max-w-3xl">
             <span className="inline-block py-1 px-3 mb-6 border border-primary/20 bg-primary/5 text-primary text-[10px] font-bold tracking-widest uppercase rounded-sm">
               About
             </span>
@@ -50,14 +51,14 @@ export default function AboutPage() {
               We architect, scale, and sustain high-impact ventures at the
               intersection of intelligence and infrastructure.
             </p>
-          </div>
+          </FadeUp>
         </div>
       </section>
 
       {/* ── Mission ── */}
       <section className="py-20 px-6 md:px-10 bg-surface-container-low">
         <div className="max-w-screen-xl mx-auto">
-          <div className="max-w-3xl">
+          <FadeUp className="max-w-3xl">
             <span className="text-primary font-headline uppercase tracking-[0.2em] font-bold text-xs block mb-6">
               Our mission
             </span>
@@ -83,7 +84,7 @@ export default function AboutPage() {
               always disclosed, never editorial. We think that is a reasonable
               model, and we are open about it.
             </p>
-          </div>
+          </FadeUp>
         </div>
       </section>
 
@@ -91,25 +92,29 @@ export default function AboutPage() {
       <section className="py-20 px-6 md:px-10">
         <div className="max-w-screen-xl mx-auto">
           <div className="max-w-3xl">
-            <span className="text-primary font-headline uppercase tracking-[0.2em] font-bold text-xs block mb-6">
-              Our principles
-            </span>
-            <h2 className="text-3xl font-headline font-bold text-white mb-12">
-              The standards every position is held to.
-            </h2>
+            <FadeUp>
+              <span className="text-primary font-headline uppercase tracking-[0.2em] font-bold text-xs block mb-6">
+                Our principles
+              </span>
+              <h2 className="text-3xl font-headline font-bold text-white mb-12">
+                The standards every position is held to.
+              </h2>
+            </FadeUp>
             <div className="flex flex-col gap-8">
-              {principles.map((principle) => (
-                <div key={principle.title} className="flex gap-6">
-                  <div className="w-1 rounded-full bg-primary/40 flex-shrink-0 self-stretch" />
-                  <div>
-                    <h3 className="font-headline font-bold text-white mb-2 text-lg">
-                      {principle.title}
-                    </h3>
-                    <p className="text-sm text-on-surface-variant leading-relaxed">
-                      {principle.body}
-                    </p>
+              {principles.map((principle, i) => (
+                <FadeUp key={principle.title} delay={i * 0.08}>
+                  <div className="flex gap-6">
+                    <div className="w-1 rounded-full bg-primary/40 flex-shrink-0 self-stretch" />
+                    <div>
+                      <h3 className="font-headline font-bold text-white mb-2 text-lg">
+                        {principle.title}
+                      </h3>
+                      <p className="text-sm text-on-surface-variant leading-relaxed">
+                        {principle.body}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </FadeUp>
               ))}
             </div>
           </div>
@@ -119,7 +124,7 @@ export default function AboutPage() {
       {/* ── Where we focus ── */}
       <section className="py-20 px-6 md:px-10 bg-surface-container-low">
         <div className="max-w-screen-xl mx-auto">
-          <div className="max-w-3xl">
+          <FadeUp className="max-w-3xl">
             <span className="text-primary font-headline uppercase tracking-[0.2em] font-bold text-xs block mb-6">
               Where we focus
             </span>
@@ -151,7 +156,7 @@ export default function AboutPage() {
             >
               See our positions <ArrowRight size={15} />
             </Link>
-          </div>
+          </FadeUp>
         </div>
       </section>
     </main>

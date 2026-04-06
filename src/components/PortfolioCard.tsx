@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { ExternalLink, Zap, Clock } from "lucide-react";
+import { motion } from "framer-motion";
 import type { PortfolioSite } from "@/types";
 
 interface PortfolioCardProps {
@@ -29,7 +32,16 @@ export default function PortfolioCard({ site }: PortfolioCardProps) {
   const status = statusConfig[site.status];
 
   return (
-    <div className="group bg-surface-container-low rounded-xl p-8 flex flex-col gap-5 hover:bg-surface-container-high transition-all duration-300 hover:shadow-[0_0_24px_rgba(173,198,255,0.05)]">
+    <motion.div
+      className="group bg-surface-container-low rounded-xl p-8 flex flex-col gap-5 border border-white/5"
+      whileHover={{
+        y: -6,
+        boxShadow: "0 0 32px rgba(38, 198, 218, 0.08), 0 16px 40px rgba(0,0,0,0.3)",
+        borderColor: "rgba(38, 198, 218, 0.15)",
+        transition: { duration: 0.28, ease: "easeOut" },
+      }}
+      initial={{ borderColor: "rgba(255,255,255,0.05)" }}
+    >
       <div className="flex items-start justify-between gap-3">
         <div>
           <h3 className="font-headline font-bold text-white text-lg">
@@ -64,6 +76,6 @@ export default function PortfolioCard({ site }: PortfolioCardProps) {
           </Link>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PortfolioCard from "@/components/PortfolioCard";
+import FadeUp from "@/components/FadeUp";
 import { portfolioSites } from "@/lib/portfolio";
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export default function PortfolioPage() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary-container/10 blur-[100px] rounded-full pointer-events-none" />
 
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-          <div className="lg:col-span-8">
+          <FadeUp className="lg:col-span-8">
             <span className="inline-block py-1 px-3 mb-6 border border-primary/20 bg-primary/5 text-primary text-[10px] font-bold tracking-widest uppercase rounded-sm">
               Market positions
             </span>
@@ -35,9 +36,9 @@ export default function PortfolioPage() {
               intelligence, infrastructure, or information. We identified the
               opportunity, built the authoritative position, and own it.
             </p>
-          </div>
+          </FadeUp>
 
-          <div className="lg:col-span-4 flex lg:justify-end">
+          <FadeUp delay={0.15} className="lg:col-span-4 flex lg:justify-end">
             <div className="p-8 bg-surface-container-low rounded-xl relative overflow-hidden">
               <div className="relative z-10">
                 <div className="text-5xl font-headline font-bold text-white mb-1">
@@ -53,7 +54,7 @@ export default function PortfolioPage() {
                 </span>
               </div>
             </div>
-          </div>
+          </FadeUp>
         </div>
       </section>
 
@@ -63,17 +64,19 @@ export default function PortfolioPage() {
 
           {liveSites.length > 0 && (
             <section>
-              <div className="mb-8">
+              <FadeUp className="mb-8">
                 <span className="inline-block px-3 py-1 border border-primary/20 bg-primary/5 text-primary text-[10px] font-bold uppercase tracking-widest rounded-sm mb-4 font-headline">
                   Live
                 </span>
                 <h2 className="text-2xl font-headline font-bold text-white">
                   Active positions
                 </h2>
-              </div>
+              </FadeUp>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {liveSites.map((site) => (
-                  <PortfolioCard key={site.domain} site={site} />
+                {liveSites.map((site, i) => (
+                  <FadeUp key={site.domain} delay={i * 0.1}>
+                    <PortfolioCard site={site} />
+                  </FadeUp>
                 ))}
               </div>
             </section>
@@ -81,17 +84,19 @@ export default function PortfolioPage() {
 
           {devSites.length > 0 && (
             <section>
-              <div className="mb-8">
+              <FadeUp className="mb-8">
                 <span className="inline-block px-3 py-1 border border-tertiary/20 bg-tertiary/5 text-tertiary text-[10px] font-bold uppercase tracking-widest rounded-sm mb-4 font-headline">
                   In Development
                 </span>
                 <h2 className="text-2xl font-headline font-bold text-white">
                   Building now
                 </h2>
-              </div>
+              </FadeUp>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {devSites.map((site) => (
-                  <PortfolioCard key={site.domain} site={site} />
+                {devSites.map((site, i) => (
+                  <FadeUp key={site.domain} delay={i * 0.1}>
+                    <PortfolioCard site={site} />
+                  </FadeUp>
                 ))}
               </div>
             </section>
@@ -99,7 +104,7 @@ export default function PortfolioPage() {
 
           {plannedSites.length > 0 && (
             <section>
-              <div className="mb-8">
+              <FadeUp className="mb-8">
                 <span className="inline-block px-3 py-1 border border-outline-variant/30 bg-on-surface-variant/5 text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-sm mb-4 font-headline">
                   Market identified
                 </span>
@@ -109,10 +114,12 @@ export default function PortfolioPage() {
                 <p className="text-on-surface-variant text-sm mt-2">
                   Market thesis validated. Domain registered. Build sequenced.
                 </p>
-              </div>
+              </FadeUp>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {plannedSites.map((site) => (
-                  <PortfolioCard key={site.domain} site={site} />
+                {plannedSites.map((site, i) => (
+                  <FadeUp key={site.domain} delay={i * 0.1}>
+                    <PortfolioCard site={site} />
+                  </FadeUp>
                 ))}
               </div>
             </section>

@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, Globe, Shield, TrendingUp } from "lucide-react";
 import PortfolioCard from "@/components/PortfolioCard";
+import HeroSection from "@/components/HeroSection";
+import FadeUp from "@/components/FadeUp";
 import { portfolioSites } from "@/lib/portfolio";
+import ThesisStrip from "@/components/ThesisStrip";
+import PillarsGrid from "@/components/PillarsGrid";
 
 export const metadata: Metadata = {
   title: "Watch This Capital — Deep Tech, AI & Digital Infrastructure",
@@ -39,146 +42,14 @@ export default function HomePage() {
   return (
     <main className="pt-20">
       {/* ── Hero ── */}
-      <section className="relative min-h-[860px] flex items-center px-6 md:px-10 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-container/10 blur-[120px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-secondary-container/5 blur-[80px] rounded-full pointer-events-none" />
-
-        <div className="max-w-screen-xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          {/* Left */}
-          <div className="lg:col-span-7 z-10">
-            <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6 font-headline">
-              Watch This Capital
-            </span>
-            <h1 className="text-5xl md:text-7xl font-headline font-bold leading-[0.95] tracking-tighter mb-8 text-white">
-              Architecting the future of Deep Tech, AI, and digital{" "}
-              <span className="hero-gradient-text">infrastructure.</span>
-            </h1>
-            <p className="text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed mb-10">
-              We don&apos;t just invest — we architect, scale, and sustain
-              high-impact ventures at the intersection of intelligence and
-              infrastructure. From AI and SaaS to strategic media and
-              information services, we turn early-stage breakthroughs into
-              category leaders.
-            </p>
-            <div className="flex flex-wrap gap-5">
-              <Link
-                href="/portfolio"
-                className="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-lg text-sm uppercase tracking-widest font-headline"
-              >
-                Our positions <ArrowRight size={16} />
-              </Link>
-              <Link
-                href="/about"
-                className="btn-secondary inline-flex items-center gap-2 px-8 py-4 rounded-lg text-sm uppercase tracking-widest font-headline"
-              >
-                Our thesis
-              </Link>
-            </div>
-          </div>
-
-          {/* Right — info card */}
-          <div className="lg:col-span-5 relative">
-            <div className="bg-surface-container-low p-8 rounded-2xl relative z-10 border border-white/5 lg:rotate-1">
-              <div className="space-y-6">
-                <div className="flex justify-center pb-2">
-                  <Image
-                    src="/logo-transparent.png"
-                    alt="Watch This Capital"
-                    width={340}
-                    height={200}
-                    className="w-full max-w-[280px] h-auto object-contain"
-                    priority
-                  />
-                </div>
-                <div>
-                  <div className="h-0.5 w-12 bg-primary-container mb-6" />
-                  <p className="text-xs font-headline font-bold uppercase tracking-[0.2em] text-primary mb-2">
-                    The thesis
-                  </p>
-                  <p className="text-on-surface-variant text-sm leading-relaxed">
-                    The next decade of value creation belongs to companies that
-                    master intelligence and infrastructure. We identify the
-                    intersection, build the position, and own it.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-3 gap-4 pt-4 border-t border-outline-variant/20">
-                  {[
-                    { value: `${liveSites.length}`, label: "Live now" },
-                    { value: "UK", label: "Market focus" },
-                    { value: "2025", label: "Founded" },
-                  ].map((s) => (
-                    <div key={s.label} className="text-center">
-                      <div className="text-2xl font-headline font-black text-white mb-1">
-                        {s.value}
-                      </div>
-                      <div className="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">
-                        {s.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="bg-surface-container rounded-xl p-5">
-                  <p className="text-xs font-headline font-bold uppercase tracking-widest text-primary mb-2">
-                    Active position
-                  </p>
-                  <p className="text-base font-headline font-bold text-white">
-                    SoleTraderGuide
-                  </p>
-                  <p className="text-xs text-on-surface-variant mt-1">
-                    4.2M sole traders. MTD mandatory from 2026. The independent
-                    guide — built before the rush.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection liveSitesCount={liveSites.length} />
 
       {/* ── Thesis strip ── */}
-      <section className="py-20 px-6 md:px-10 bg-surface-container-low">
-        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-10 bg-surface-container rounded-2xl flex flex-col justify-between">
-            <Globe size={32} className="text-primary mb-10" />
-            <div>
-              <h4 className="text-4xl font-headline font-black mb-2 text-white">
-                We identify
-              </h4>
-              <p className="text-on-surface-variant uppercase tracking-widest text-xs font-bold">
-                High-value markets where no leader yet exists
-              </p>
-            </div>
-          </div>
-          <div className="p-10 bg-primary-container text-white rounded-2xl flex flex-col justify-between">
-            <Shield size={32} className="text-white mb-10" />
-            <div>
-              <h4 className="text-4xl font-headline font-black mb-2">
-                We build
-              </h4>
-              <p className="text-teal-100 uppercase tracking-widest text-xs font-bold">
-                The authoritative resource that resolves it
-              </p>
-            </div>
-          </div>
-          <div className="p-10 bg-surface-container rounded-2xl flex flex-col justify-between">
-            <TrendingUp size={32} className="text-primary mb-10" />
-            <div>
-              <h4 className="text-4xl font-headline font-black mb-2 text-white">
-                We own
-              </h4>
-              <p className="text-on-surface-variant uppercase tracking-widest text-xs font-bold">
-                The position — and compound it from there
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ThesisStrip />
 
       {/* ── Mission ── */}
       <section className="py-28 px-6 md:px-10 overflow-hidden">
-        <div className="max-w-3xl mx-auto text-center relative">
+        <FadeUp className="max-w-3xl mx-auto text-center relative">
           <div className="absolute -top-10 left-1/2 -translate-x-1/2 text-[140px] font-black text-white/[0.03] select-none font-headline leading-none pointer-events-none">
             THESIS
           </div>
@@ -192,14 +63,14 @@ export default function HomePage() {
             at the intersection of intelligence, infrastructure, or information
             — we move.
           </p>
-        </div>
+        </FadeUp>
       </section>
 
       {/* ── Live portfolio ── */}
       {liveSites.length > 0 && (
         <section className="py-20 px-6 md:px-10">
           <div className="max-w-screen-xl mx-auto">
-            <div className="flex justify-between items-end mb-12">
+            <FadeUp className="flex justify-between items-end mb-12">
               <div>
                 <span className="text-primary font-headline uppercase tracking-[0.2em] font-bold text-xs block mb-3">
                   Live now
@@ -214,91 +85,91 @@ export default function HomePage() {
               >
                 All positions <ArrowRight size={14} />
               </Link>
-            </div>
+            </FadeUp>
 
             <div className="flex flex-col gap-6">
-              {liveSites.map((site) =>
+              {liveSites.map((site, i) =>
                 site.domain === "soletraderguide.co.uk" ? (
                   /* ── Featured card: SoleTraderGuide ── */
-                  <div
-                    key={site.domain}
-                    className="bg-surface-container-low rounded-2xl border border-[#0d6e6e]/30 hover:border-[#0d6e6e]/60 transition-all duration-300 overflow-hidden"
-                  >
-                    <div className="flex flex-col lg:flex-row">
-                      {/* Brand panel */}
-                      <div className="bg-[#0d6e6e]/10 border-b lg:border-b-0 lg:border-r border-[#0d6e6e]/20 p-8 lg:p-10 flex flex-col justify-between gap-8 lg:w-72 shrink-0">
-                        <div className="flex flex-col gap-4">
-                          {/* STG logo — inline SVG for dark background */}
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 232 44"
-                            width="180"
-                            height="34"
-                            aria-label="SoleTraderGuide"
-                          >
-                            <rect x="0" y="2" width="40" height="40" rx="9" fill="#0d6e6e" />
-                            <polygon points="20,7 23,18 20,15.5 17,18" fill="white" />
-                            <polygon points="20,35 23,24 20,26.5 17,24" fill="white" opacity="0.3" />
-                            <circle cx="20" cy="21" r="3" fill="#0d6e6e" stroke="white" strokeWidth="1.5" />
-                            <text
-                              x="52"
-                              y="28"
-                              fontFamily="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, sans-serif"
-                              fontSize="22"
-                              fontWeight="700"
-                              letterSpacing="-0.6"
+                  <FadeUp key={site.domain} delay={i * 0.08}>
+                    <div className="bg-surface-container-low rounded-2xl border border-[#0d6e6e]/30 hover:border-[#0d6e6e]/60 transition-all duration-300 overflow-hidden hover:shadow-[0_0_48px_rgba(13,110,110,0.12)] group">
+                      <div className="flex flex-col lg:flex-row">
+                        {/* Brand panel */}
+                        <div className="bg-[#0d6e6e]/10 border-b lg:border-b-0 lg:border-r border-[#0d6e6e]/20 p-8 lg:p-10 flex flex-col justify-between gap-8 lg:w-72 shrink-0">
+                          <div className="flex flex-col gap-4">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 232 44"
+                              width="180"
+                              height="34"
+                              aria-label="SoleTraderGuide"
                             >
-                              <tspan fill="white">SoleTrader</tspan>
-                              <tspan fill="#26c6da">Guide</tspan>
-                            </text>
-                          </svg>
-                          <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-sm uppercase tracking-widest bg-[#0d6e6e]/20 text-[#26c6da] border border-[#0d6e6e]/30 w-fit">
-                            <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
-                            Live
-                          </span>
+                              <rect x="0" y="2" width="40" height="40" rx="9" fill="#0d6e6e" />
+                              <polygon points="20,7 23,18 20,15.5 17,18" fill="white" />
+                              <polygon points="20,35 23,24 20,26.5 17,24" fill="white" opacity="0.3" />
+                              <circle cx="20" cy="21" r="3" fill="#0d6e6e" stroke="white" strokeWidth="1.5" />
+                              <text
+                                x="52"
+                                y="28"
+                                fontFamily="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, sans-serif"
+                                fontSize="22"
+                                fontWeight="700"
+                                letterSpacing="-0.6"
+                              >
+                                <tspan fill="white">SoleTrader</tspan>
+                                <tspan fill="#26c6da">Guide</tspan>
+                              </text>
+                            </svg>
+                            <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-sm uppercase tracking-widest bg-[#0d6e6e]/20 text-[#26c6da] border border-[#0d6e6e]/30 w-fit">
+                              <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+                              Live
+                            </span>
+                          </div>
+                          <div className="flex flex-col gap-1">
+                            <span className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
+                              {site.category}
+                            </span>
+                            <span className="text-xs text-on-surface-variant/60">{site.domain}</span>
+                          </div>
                         </div>
-                        <div className="flex flex-col gap-1">
-                          <span className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
-                            {site.category}
-                          </span>
-                          <span className="text-xs text-on-surface-variant/60">{site.domain}</span>
-                        </div>
-                      </div>
 
-                      {/* Content panel */}
-                      <div className="flex-1 p-8 lg:p-10 flex flex-col gap-6">
-                        <p className="text-sm text-on-surface-variant leading-relaxed">
-                          {site.description}
-                        </p>
-                        <div className="grid grid-cols-3 gap-4 p-5 bg-surface-container rounded-xl">
-                          {[
-                            { value: "4.2M", label: "UK sole traders" },
-                            { value: "2026", label: "MTD deadline" },
-                            { value: "UK", label: "Market" },
-                          ].map((s) => (
-                            <div key={s.label} className="text-center">
-                              <div className="text-xl font-headline font-black text-white mb-0.5">
-                                {s.value}
+                        {/* Content panel */}
+                        <div className="flex-1 p-8 lg:p-10 flex flex-col gap-6">
+                          <p className="text-sm text-on-surface-variant leading-relaxed">
+                            {site.description}
+                          </p>
+                          <div className="grid grid-cols-3 gap-4 p-5 bg-surface-container rounded-xl">
+                            {[
+                              { value: "4.2M", label: "UK sole traders" },
+                              { value: "2026", label: "MTD deadline" },
+                              { value: "UK", label: "Market" },
+                            ].map((s) => (
+                              <div key={s.label} className="text-center">
+                                <div className="text-xl font-headline font-black text-white mb-0.5">
+                                  {s.value}
+                                </div>
+                                <div className="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">
+                                  {s.label}
+                                </div>
                               </div>
-                              <div className="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">
-                                {s.label}
-                              </div>
-                            </div>
-                          ))}
+                            ))}
+                          </div>
+                          <Link
+                            href={site.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#26c6da] hover:text-primary transition-colors w-fit"
+                          >
+                            Visit site <ArrowRight size={12} />
+                          </Link>
                         </div>
-                        <Link
-                          href={site.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#26c6da] hover:text-primary transition-colors w-fit"
-                        >
-                          Visit site <ArrowRight size={12} />
-                        </Link>
                       </div>
                     </div>
-                  </div>
+                  </FadeUp>
                 ) : (
-                  <PortfolioCard key={site.domain} site={site} />
+                  <FadeUp key={site.domain} delay={i * 0.08}>
+                    <PortfolioCard site={site} />
+                  </FadeUp>
                 )
               )}
             </div>
@@ -310,17 +181,19 @@ export default function HomePage() {
       {pipelineSites.length > 0 && (
         <section className="py-20 px-6 md:px-10">
           <div className="max-w-screen-xl mx-auto">
-            <div className="mb-12">
+            <FadeUp className="mb-12">
               <span className="text-primary font-headline uppercase tracking-[0.2em] font-bold text-xs block mb-3">
                 In development
               </span>
               <h2 className="text-4xl font-headline font-bold text-white">
                 Markets we are moving into
               </h2>
-            </div>
+            </FadeUp>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {pipelineSites.map((site) => (
-                <PortfolioCard key={site.domain} site={site} />
+              {pipelineSites.map((site, i) => (
+                <FadeUp key={site.domain} delay={i * 0.1}>
+                  <PortfolioCard site={site} />
+                </FadeUp>
               ))}
             </div>
           </div>
@@ -330,63 +203,48 @@ export default function HomePage() {
       {/* ── How we operate ── */}
       <section className="py-20 px-6 md:px-10 bg-surface-container-low">
         <div className="max-w-screen-xl mx-auto">
-          <div className="mb-12">
+          <FadeUp className="mb-12">
             <span className="text-primary font-headline uppercase tracking-[0.2em] font-bold text-xs block mb-3">
               How we operate
             </span>
             <h2 className="text-4xl font-headline font-bold text-white">
               The standards every position is held to
             </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {pillars.map((pillar) => (
-              <div
-                key={pillar.title}
-                className="bg-surface-container p-8 rounded-xl"
-              >
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  {pillar.icon}
-                </div>
-                <h3 className="font-headline font-bold text-white mb-3 text-lg">
-                  {pillar.title}
-                </h3>
-                <p className="text-sm text-on-surface-variant leading-relaxed">
-                  {pillar.description}
-                </p>
-              </div>
-            ))}
-          </div>
+          </FadeUp>
+          <PillarsGrid pillars={pillars} />
         </div>
       </section>
 
       {/* ── CTA ── */}
       <section className="py-24 px-6 md:px-10">
         <div className="max-w-screen-xl mx-auto">
-          <div className="bg-surface-container-low rounded-3xl p-12 md:p-20 overflow-hidden relative border border-white/5">
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-primary-container/5 blur-[100px] rounded-full pointer-events-none" />
-            <div className="relative z-10 max-w-2xl">
-              <h2 className="text-4xl font-headline font-bold mb-6 text-white">
-                Partner with us.
-              </h2>
-              <p className="text-lg text-on-surface-variant leading-relaxed mb-4">
-                We take positions where structural change creates demand for a
-                category-defining resource. If you are building something at
-                the intersection of Deep Tech, AI, SaaS, or strategic media —
-                and want a partner who operates, not just allocates capital —
-                we want to hear from you.
-              </p>
-              <p className="text-sm text-on-surface-variant/70 leading-relaxed mb-10">
-                We partner selectively. We operate with conviction. That is the
-                point.
-              </p>
-              <Link
-                href="/contact"
-                className="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-lg text-sm uppercase tracking-widest font-headline"
-              >
-                Get in touch <ArrowRight size={16} />
-              </Link>
+          <FadeUp>
+            <div className="bg-surface-container-low rounded-3xl p-12 md:p-20 overflow-hidden relative border border-white/5 hover:border-primary/10 transition-colors duration-500">
+              <div className="absolute top-0 right-0 w-1/2 h-full bg-primary-container/5 blur-[100px] rounded-full pointer-events-none" />
+              <div className="relative z-10 max-w-2xl">
+                <h2 className="text-4xl font-headline font-bold mb-6 text-white">
+                  Partner with us.
+                </h2>
+                <p className="text-lg text-on-surface-variant leading-relaxed mb-4">
+                  We take positions where structural change creates demand for a
+                  category-defining resource. If you are building something at
+                  the intersection of Deep Tech, AI, SaaS, or strategic media —
+                  and want a partner who operates, not just allocates capital —
+                  we want to hear from you.
+                </p>
+                <p className="text-sm text-on-surface-variant/70 leading-relaxed mb-10">
+                  We partner selectively. We operate with conviction. That is the
+                  point.
+                </p>
+                <Link
+                  href="/contact"
+                  className="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-lg text-sm uppercase tracking-widest font-headline"
+                >
+                  Get in touch <ArrowRight size={16} />
+                </Link>
+              </div>
             </div>
-          </div>
+          </FadeUp>
         </div>
       </section>
     </main>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 
 const navLinks = [
   { href: "/portfolio", label: "Portfolio" },
@@ -15,7 +16,12 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 w-full z-50 glass-nav border-b border-white/5 shadow-2xl shadow-blue-900/10">
+    <motion.header
+      className="fixed top-0 w-full z-50 glass-nav border-b border-white/5 shadow-2xl shadow-blue-900/10"
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
+    >
       <div className="flex justify-between items-center px-6 md:px-10 py-4 max-w-screen-xl mx-auto">
         {/* Wordmark */}
         <Link href="/" className="group" aria-label="Watch This Capital home">
@@ -86,6 +92,6 @@ export default function Header() {
           </Link>
         </nav>
       )}
-    </header>
+    </motion.header>
   );
 }
