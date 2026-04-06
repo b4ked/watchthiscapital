@@ -23,17 +23,14 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-6 md:px-10 py-16 max-w-screen-xl mx-auto">
         {/* Brand */}
         <div className="md:col-span-2">
-          <div className="flex items-center gap-2 mb-4">
+          <div className="mb-4">
             <Image
-              src="/nav-icon.png"
-              alt=""
-              width={44}
-              height={29}
-              className="mix-blend-screen opacity-90"
+              src="/logo-transparent.png"
+              alt="Watch This Capital"
+              width={180}
+              height={90}
+              className="opacity-90 object-contain"
             />
-            <p className="text-xl font-black text-white font-headline">
-              Watch This Capital
-            </p>
           </div>
           <p className="text-sm leading-relaxed text-on-surface-variant max-w-sm">
             We build trusted content and comparison resources in UK regulated
