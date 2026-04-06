@@ -6,9 +6,9 @@ import PortfolioCard from "@/components/PortfolioCard";
 import { portfolioSites } from "@/lib/portfolio";
 
 export const metadata: Metadata = {
-  title: "Watch This Capital — Regulated Information Markets",
+  title: "Watch This Capital — Deep Tech, AI & Digital Infrastructure",
   description:
-    "Watch This Capital identifies regulated markets where trust is structurally absent, builds the authoritative independent resource, and owns the gap.",
+    "Watch This Capital architects, scales, and sustains high-impact ventures at the intersection of intelligence and infrastructure — from AI and SaaS to strategic media.",
 };
 
 const pillars = [
@@ -50,14 +50,15 @@ export default function HomePage() {
               Watch This Capital
             </span>
             <h1 className="text-5xl md:text-7xl font-headline font-bold leading-[0.95] tracking-tighter mb-8 text-white">
-              Every regulation creates a question. We build the{" "}
-              <span className="hero-gradient-text">answer.</span>
+              Architecting the future of Deep Tech, AI, and digital{" "}
+              <span className="hero-gradient-text">infrastructure.</span>
             </h1>
             <p className="text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed mb-10">
-              We exist to fill a specific gap: the space between government
-              guidance that is difficult to read and vendor marketing that cannot
-              be trusted. Independent, authoritative resources for people making
-              high-stakes decisions in UK regulated markets.
+              We don&apos;t just invest — we architect, scale, and sustain
+              high-impact ventures at the intersection of intelligence and
+              infrastructure. From AI and SaaS to strategic media and
+              information services, we turn early-stage breakthroughs into
+              category leaders.
             </p>
             <div className="flex flex-wrap gap-5">
               <Link
@@ -95,9 +96,9 @@ export default function HomePage() {
                     The thesis
                   </p>
                   <p className="text-on-surface-variant text-sm leading-relaxed">
-                    Regulated markets where trust is structurally absent. We
-                    identify them, build the authoritative resource, and own the
-                    gap.
+                    The next decade of value creation belongs to companies that
+                    master intelligence and infrastructure. We identify the
+                    intersection, build the position, and own it.
                   </p>
                 </div>
 
@@ -213,8 +214,111 @@ export default function HomePage() {
                 All positions <ArrowRight size={14} />
               </Link>
             </div>
+
+            <div className="flex flex-col gap-6">
+              {liveSites.map((site) =>
+                site.domain === "soletraderguide.co.uk" ? (
+                  /* ── Featured card: SoleTraderGuide ── */
+                  <div
+                    key={site.domain}
+                    className="bg-surface-container-low rounded-2xl border border-[#0d6e6e]/30 hover:border-[#0d6e6e]/60 transition-all duration-300 overflow-hidden"
+                  >
+                    <div className="flex flex-col lg:flex-row">
+                      {/* Brand panel */}
+                      <div className="bg-[#0d6e6e]/10 border-b lg:border-b-0 lg:border-r border-[#0d6e6e]/20 p-8 lg:p-10 flex flex-col justify-between gap-8 lg:w-72 shrink-0">
+                        <div className="flex flex-col gap-4">
+                          {/* STG logo — inline SVG for dark background */}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 232 44"
+                            width="180"
+                            height="34"
+                            aria-label="SoleTraderGuide"
+                          >
+                            <rect x="0" y="2" width="40" height="40" rx="9" fill="#0d6e6e" />
+                            <polygon points="20,7 23,18 20,15.5 17,18" fill="white" />
+                            <polygon points="20,35 23,24 20,26.5 17,24" fill="white" opacity="0.3" />
+                            <circle cx="20" cy="21" r="3" fill="#0d6e6e" stroke="white" strokeWidth="1.5" />
+                            <text
+                              x="52"
+                              y="28"
+                              fontFamily="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, sans-serif"
+                              fontSize="22"
+                              fontWeight="700"
+                              letterSpacing="-0.6"
+                            >
+                              <tspan fill="white">SoleTrader</tspan>
+                              <tspan fill="#26c6da">Guide</tspan>
+                            </text>
+                          </svg>
+                          <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-sm uppercase tracking-widest bg-[#0d6e6e]/20 text-[#26c6da] border border-[#0d6e6e]/30 w-fit">
+                            <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+                            Live
+                          </span>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                          <span className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
+                            {site.category}
+                          </span>
+                          <span className="text-xs text-on-surface-variant/60">{site.domain}</span>
+                        </div>
+                      </div>
+
+                      {/* Content panel */}
+                      <div className="flex-1 p-8 lg:p-10 flex flex-col gap-6">
+                        <p className="text-sm text-on-surface-variant leading-relaxed">
+                          {site.description}
+                        </p>
+                        <div className="grid grid-cols-3 gap-4 p-5 bg-surface-container rounded-xl">
+                          {[
+                            { value: "4.2M", label: "UK sole traders" },
+                            { value: "2026", label: "MTD deadline" },
+                            { value: "UK", label: "Market" },
+                          ].map((s) => (
+                            <div key={s.label} className="text-center">
+                              <div className="text-xl font-headline font-black text-white mb-0.5">
+                                {s.value}
+                              </div>
+                              <div className="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">
+                                {s.label}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        <Link
+                          href={site.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#26c6da] hover:text-primary transition-colors w-fit"
+                        >
+                          Visit site <ArrowRight size={12} />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <PortfolioCard key={site.domain} site={site} />
+                )
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Pipeline ── */}
+      {pipelineSites.length > 0 && (
+        <section className="py-20 px-6 md:px-10">
+          <div className="max-w-screen-xl mx-auto">
+            <div className="mb-12">
+              <span className="text-primary font-headline uppercase tracking-[0.2em] font-bold text-xs block mb-3">
+                In development
+              </span>
+              <h2 className="text-4xl font-headline font-bold text-white">
+                Markets we are moving into
+              </h2>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {liveSites.map((site) => (
+              {pipelineSites.map((site) => (
                 <PortfolioCard key={site.domain} site={site} />
               ))}
             </div>
@@ -253,27 +357,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ── Pipeline ── */}
-      {pipelineSites.length > 0 && (
-        <section className="py-20 px-6 md:px-10">
-          <div className="max-w-screen-xl mx-auto">
-            <div className="mb-12">
-              <span className="text-primary font-headline uppercase tracking-[0.2em] font-bold text-xs block mb-3">
-                In development
-              </span>
-              <h2 className="text-4xl font-headline font-bold text-white">
-                Markets we are moving into
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {pipelineSites.map((site) => (
-                <PortfolioCard key={site.domain} site={site} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* ── CTA ── */}
       <section className="py-24 px-6 md:px-10">
