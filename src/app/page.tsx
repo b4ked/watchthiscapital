@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Globe, Shield, TrendingUp } from "lucide-react";
 import PortfolioCard from "@/components/PortfolioCard";
+import STGFeaturedCard from "@/components/STGFeaturedCard";
 import HeroSection from "@/components/HeroSection";
 import FadeUp from "@/components/FadeUp";
 import { portfolioSites } from "@/lib/portfolio";
@@ -90,81 +91,8 @@ export default function HomePage() {
             <div className="flex flex-col gap-6">
               {liveSites.map((site, i) =>
                 site.domain === "soletraderguide.co.uk" ? (
-                  /* ── Featured card: SoleTraderGuide ── */
                   <FadeUp key={site.domain} delay={i * 0.08}>
-                    <div className="bg-surface-container-low rounded-2xl border border-[#0d6e6e]/30 hover:border-[#0d6e6e]/80 transition-all duration-300 overflow-hidden hover:shadow-[0_0_64px_rgba(13,110,110,0.28),0_0_24px_rgba(13,150,80,0.15)] group">
-                      <div className="flex flex-col lg:flex-row">
-                        {/* Brand panel */}
-                        <div className="bg-[#0d6e6e]/10 border-b lg:border-b-0 lg:border-r border-[#0d6e6e]/20 p-8 lg:p-10 flex flex-col justify-between gap-8 lg:w-72 shrink-0">
-                          <div className="flex flex-col gap-4">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 232 44"
-                              width="180"
-                              height="34"
-                              aria-label="SoleTraderGuide"
-                            >
-                              <rect x="0" y="2" width="40" height="40" rx="9" fill="#0d6e6e" />
-                              <polygon points="20,7 23,18 20,15.5 17,18" fill="white" />
-                              <polygon points="20,35 23,24 20,26.5 17,24" fill="white" opacity="0.3" />
-                              <circle cx="20" cy="21" r="3" fill="#0d6e6e" stroke="white" strokeWidth="1.5" />
-                              <text
-                                x="52"
-                                y="28"
-                                fontFamily="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Helvetica, sans-serif"
-                                fontSize="22"
-                                fontWeight="700"
-                                letterSpacing="-0.6"
-                              >
-                                <tspan fill="white">SoleTrader</tspan>
-                                <tspan fill="#26c6da">Guide</tspan>
-                              </text>
-                            </svg>
-                            <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-sm uppercase tracking-widest bg-[#0d6e6e]/20 text-[#26c6da] border border-[#0d6e6e]/30 w-fit">
-                              <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
-                              Live
-                            </span>
-                          </div>
-                          <div className="flex flex-col gap-1">
-                            <span className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">
-                              {site.category}
-                            </span>
-                            <span className="text-xs text-on-surface-variant/60">{site.domain}</span>
-                          </div>
-                        </div>
-
-                        {/* Content panel */}
-                        <div className="flex-1 p-8 lg:p-10 flex flex-col gap-6">
-                          <p className="text-sm text-on-surface-variant leading-relaxed">
-                            {site.description}
-                          </p>
-                          <div className="grid grid-cols-3 gap-4 p-5 bg-surface-container rounded-xl">
-                            {[
-                              { value: "4.2M", label: "UK sole traders" },
-                              { value: "2026", label: "MTD deadline" },
-                              { value: "UK", label: "Market" },
-                            ].map((s) => (
-                              <div key={s.label} className="text-center">
-                                <div className="text-xl font-headline font-black text-white mb-0.5">
-                                  {s.value}
-                                </div>
-                                <div className="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">
-                                  {s.label}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                          <Link
-                            href={site.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest w-fit border border-[#0d6e6e] bg-[#0d6e6e]/20 text-[#26c6da] hover:bg-[#0d6e6e]/40 hover:border-[#26c6da] hover:shadow-[0_0_20px_rgba(13,110,110,0.5)] active:scale-95 active:shadow-[0_0_32px_rgba(13,110,110,0.7)] transition-all duration-200 font-headline"
-                          >
-                            Visit site <ArrowRight size={12} />
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
+                    <STGFeaturedCard site={site} />
                   </FadeUp>
                 ) : (
                   <FadeUp key={site.domain} delay={i * 0.08}>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PortfolioCard from "@/components/PortfolioCard";
+import STGFeaturedCard from "@/components/STGFeaturedCard";
 import FadeUp from "@/components/FadeUp";
 import { portfolioSites } from "@/lib/portfolio";
 
@@ -72,12 +73,18 @@ export default function PortfolioPage() {
                   Active positions
                 </h2>
               </FadeUp>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {liveSites.map((site, i) => (
-                  <FadeUp key={site.domain} delay={i * 0.1}>
-                    <PortfolioCard site={site} />
-                  </FadeUp>
-                ))}
+              <div className="flex flex-col gap-6">
+                {liveSites.map((site, i) =>
+                  site.domain === "soletraderguide.co.uk" ? (
+                    <FadeUp key={site.domain} delay={i * 0.08}>
+                      <STGFeaturedCard site={site} />
+                    </FadeUp>
+                  ) : (
+                    <FadeUp key={site.domain} delay={i * 0.1}>
+                      <PortfolioCard site={site} />
+                    </FadeUp>
+                  )
+                )}
               </div>
             </section>
           )}
