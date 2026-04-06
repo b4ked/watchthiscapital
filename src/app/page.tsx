@@ -16,19 +16,19 @@ const pillars = [
     icon: <Shield size={20} className="text-primary" />,
     title: "Trust first",
     description:
-      "We would rather lose a commercial arrangement than publish something we cannot stand behind. Affiliate relationships are disclosed. Editorial decisions are not for sale.",
+      "We would rather lose a commercial arrangement than back something we cannot stand behind. Every relationship is disclosed. Our judgement is not for sale.",
   },
   {
     icon: <Globe size={20} className="text-primary" />,
     title: "Clarity over cleverness",
     description:
-      "Our readers face mandatory, consequential requirements. They need clear answers, not clever writing. We write for the person with fifteen minutes and something important to understand.",
+      "The markets we operate in are complex by nature. Our job is to make them navigable — whether that is a sole trader choosing compliance software or a founder evaluating a sector. Fifteen minutes and something important to decide. We build for that person.",
   },
   {
     icon: <TrendingUp size={20} className="text-primary" />,
     title: "Built to last",
     description:
-      "One well-researched, accurately maintained resource will serve readers for years. We build for depth, not volume. That is what earns authority — and holds it.",
+      "We build for depth, not volume. One well-researched, accurately maintained position will compound for years. That is what earns category authority — and holds it.",
   },
 ];
 
@@ -147,7 +147,7 @@ export default function HomePage() {
                 We identify
               </h4>
               <p className="text-on-surface-variant uppercase tracking-widest text-xs font-bold">
-                Regulated markets where trust is absent
+                High-value markets where no leader yet exists
               </p>
             </div>
           </div>
@@ -157,7 +157,7 @@ export default function HomePage() {
               <h4 className="text-4xl font-headline font-black mb-2">
                 We build
               </h4>
-              <p className="text-blue-100 uppercase tracking-widest text-xs font-bold">
+              <p className="text-teal-100 uppercase tracking-widest text-xs font-bold">
                 The authoritative resource that resolves it
               </p>
             </div>
@@ -169,7 +169,7 @@ export default function HomePage() {
                 We own
               </h4>
               <p className="text-on-surface-variant uppercase tracking-widest text-xs font-bold">
-                The gap — with disclosed commercial relationships
+                The position — and compound it from there
               </p>
             </div>
           </div>
@@ -187,9 +187,10 @@ export default function HomePage() {
           </h2>
           <div className="w-12 h-0.5 bg-primary mx-auto mb-8" />
           <p className="text-base text-on-surface-variant leading-relaxed max-w-xl mx-auto">
-            A market under regulatory pressure. An audience making consequential
-            decisions. No independent resource they can actually trust. When we
-            find that pattern, we build — and we build to last.
+            A sector under structural pressure. Audiences making high-stakes
+            decisions. No category leader yet built. When we find that pattern —
+            at the intersection of intelligence, infrastructure, or information
+            — we move.
           </p>
         </div>
       </section>
@@ -368,14 +369,14 @@ export default function HomePage() {
                 Partner with us.
               </h2>
               <p className="text-lg text-on-surface-variant leading-relaxed mb-4">
-                We take positions in regulated markets where trust is
-                structurally broken. If you make a product that genuinely
-                belongs in one of our markets — and can stand independent
-                editorial scrutiny — we want to hear from you.
+                We take positions where structural change creates demand for a
+                category-defining resource. If you are building something at
+                the intersection of Deep Tech, AI, SaaS, or strategic media —
+                and want a partner who operates, not just allocates capital —
+                we want to hear from you.
               </p>
               <p className="text-sm text-on-surface-variant/70 leading-relaxed mb-10">
-                Every commercial relationship on our sites is disclosed. Being
-                listed does not guarantee a positive assessment. That is the
+                We partner selectively. We operate with conviction. That is the
                 point.
               </p>
               <Link

@@ -5,29 +5,29 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Watch This Capital identifies regulated markets where trust is structurally absent and builds the authoritative independent resource that fills the gap.",
+    "Watch This Capital is a diversified portfolio holdings company architecting high-impact ventures at the intersection of Deep Tech, AI, SaaS, and strategic media.",
 };
 
 const principles = [
   {
-    title: "Trust first, revenue second",
-    body: "We would rather lose a commercial arrangement than publish something we cannot stand behind. Affiliate relationships never alter what we recommend.",
+    title: "Trust first, returns second",
+    body: "We would rather lose a commercial arrangement than back something we cannot stand behind. Every relationship is disclosed. Our judgement is not for sale — in any of our portfolio companies.",
   },
   {
     title: "Clarity over cleverness",
-    body: "Our readers are navigating mandatory, consequential requirements. They do not need clever writing — they need clear answers. We write for the person who has fifteen minutes and needs to understand something important.",
+    body: "The markets we operate in are complex by nature. Our job is to make them navigable. Every resource we build, every venture we back, must reduce complexity for the people it serves — not add to it.",
   },
   {
     title: "Structured and practical",
-    body: "Every page we publish should be useful to someone trying to make a decision. We do not publish content to fill gaps or hit targets. We publish content when it genuinely serves the reader.",
+    body: "Every position we take should be useful to someone trying to make a decision. We do not build to fill gaps or hit targets. We build when there is a genuine, underserved need and a clear path to category leadership.",
   },
   {
     title: "Long-term authority",
-    body: "We invest in depth over volume. A single well-researched, accurately maintained resource will serve readers for years. We build to last.",
+    body: "We invest in depth over volume. A single well-researched, accurately maintained position will compound for years. That is what earns category authority — and holds it against well-funded competitors.",
   },
   {
     title: "Honest about what we are",
-    body: "We are a publishing and affiliate business. We make money when readers take action on our recommendations. We think that is a reasonable model, and we are open about it.",
+    body: "We are a holdings company and operator. We build and back ventures across Deep Tech, SaaS, media, and information services. We make money through portfolio returns and commercial partnerships. We are transparent about all of it.",
   },
 ];
 
@@ -46,9 +46,9 @@ export default function AboutPage() {
               Why we build what we build.
             </h1>
             <p className="text-xl text-on-surface-variant font-light leading-relaxed max-w-2xl">
-              Watch This Capital is a regulated information company. We exist to
-              fill a specific gap: the space between government guidance that is
-              difficult to read and vendor marketing that cannot be trusted.
+              Watch This Capital is a diversified portfolio holdings company.
+              We architect, scale, and sustain high-impact ventures at the
+              intersection of intelligence and infrastructure.
             </p>
           </div>
         </div>
@@ -62,24 +62,26 @@ export default function AboutPage() {
               Our mission
             </span>
             <p className="text-on-surface-variant leading-relaxed mb-6 text-lg">
-              Millions of UK consumers, sole traders, freelancers, and small
-              business owners navigate complicated, often mandatory requirements
-              every year. They face tax changes they do not understand,
-              compliance deadlines that carry penalties, and a software market
-              full of competing products with no independent guide to compare
-              them.
+              We don&apos;t just invest — we architect, scale, and sustain. Our
+              approach is rooted in one belief: the next decade of value
+              creation belongs to companies that master the synergy between Deep
+              Tech and applied intelligence. We provide the strategic capital
+              and operational expertise to turn early-stage breakthroughs into
+              industry benchmarks.
             </p>
             <p className="text-on-surface-variant leading-relaxed mb-6">
-              Watch This Capital builds the independent resources these audiences
-              deserve. Sites that explain what is actually required, why it
-              matters, and which tools are genuinely the best fit — without a
-              hidden agenda, without filler, and without unnecessary complexity.
+              Our core ecosystem spans Intelligence &amp; Automation, Software
+              as a Service, Digital Growth &amp; Visibility, and Strategic
+              Media. In each, we look for the same signal: a sector under
+              structural pressure, an audience making high-stakes decisions, and
+              no category leader yet built. That is where we move.
             </p>
             <p className="text-on-surface-variant leading-relaxed">
-              We are commercial, and we are transparent about it. Some of our
-              content earns affiliate commission when readers purchase or sign up
-              to products we recommend. We disclose this clearly and it does not
-              influence our editorial decisions.
+              We are commercial, and we are transparent about it. Our portfolio
+              companies span software, media, and information services. Some
+              generate returns through affiliate and commercial arrangements —
+              always disclosed, never editorial. We think that is a reasonable
+              model, and we are open about it.
             </p>
           </div>
         </div>
@@ -125,22 +127,23 @@ export default function AboutPage() {
               Deliberate bets. Not subject matter coverage.
             </h2>
             <p className="text-on-surface-variant leading-relaxed mb-6">
-              We look for the same pattern every time: a market under regulatory
-              pressure, an audience making high-stakes decisions, and no
-              independent resource they can actually trust. When we find that
-              pattern, we build.
+              We look for the same pattern every time: a market under structural
+              pressure, an audience making consequential decisions, and no
+              independent category leader. When we find it — across Deep Tech,
+              AI, SaaS, or information services — we build.
             </p>
             <p className="text-on-surface-variant leading-relaxed mb-8">
-              Currently that is UK small business compliance, self-employment
-              finance, and the trades sector — all converging under MTD, IR35,
-              and digital-first mandates from HMRC. Each site we build is a
-              deliberate bet on a specific version of that pattern, not coverage
-              of a topic.
+              Our current positions span UK digital compliance and information
+              services, with active development across self-employed finance,
+              equity release, and the trades sector. Each is a deliberate bet on
+              a specific version of the pattern — not coverage of a topic. The
+              pipeline extends into AI-native tooling and B2B SaaS verticals
+              where the same structural dynamics apply.
             </p>
             <p className="text-on-surface-variant leading-relaxed mb-10">
-              Each site is independently operated with its own brand identity
-              and audience focus — but all share the same principles and the
-              same commitment to accuracy.
+              Each venture is independently operated with its own brand identity
+              and market focus — but all share the same principles and the same
+              commitment to depth over volume.
             </p>
             <Link
               href="/portfolio"

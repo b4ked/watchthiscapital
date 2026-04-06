@@ -33,9 +33,9 @@ export default function Footer() {
             />
           </div>
           <p className="text-sm leading-relaxed text-on-surface-variant max-w-sm">
-            We build trusted content and comparison resources in UK regulated
-            markets — helping people make confident, informed decisions without
-            jargon or bias.
+            Architecting high-impact ventures at the intersection of
+            intelligence and infrastructure — from Deep Tech and AI to
+            strategic media and information services.
           </p>
         </div>
 

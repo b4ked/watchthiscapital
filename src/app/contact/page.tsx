@@ -4,7 +4,7 @@ import { Mail, Building2 } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Partner with Watch This Capital. We work with software vendors and financial services providers who want to reach high-intent UK audiences.",
+    "Partner with Watch This Capital. We work with Deep Tech founders, software operators, and commercial partners building at the intersection of intelligence and infrastructure.",
 };
 
 export default function ContactPage() {
@@ -22,9 +22,9 @@ export default function ContactPage() {
               Talk to us.
             </h1>
             <p className="text-xl text-on-surface-variant font-light leading-relaxed">
-              We work with software vendors and financial services providers who
-              want to reach informed, high-intent UK audiences. We also hear from
-              readers with questions or feedback about our sites.
+              We work with Deep Tech founders, software operators, and
+              commercial partners across AI, SaaS, and information services. We
+              also hear from readers and users of our portfolio sites.
             </p>
           </div>
         </div>
@@ -66,10 +66,9 @@ export default function ContactPage() {
                   Commercial partnerships
                 </h2>
                 <p className="text-sm text-on-surface-variant leading-relaxed">
-                  If your product is genuinely the right fit for one of our
-                  audiences, we will give it a fair assessment and a proper
-                  audience. We work with vendors who can stand independent
-                  editorial scrutiny.
+                  If you are building at the intersection of Deep Tech, AI,
+                  SaaS, or strategic media — and want a partner who operates,
+                  not just allocates capital — let&apos;s talk.
                 </p>
               </div>
               <a

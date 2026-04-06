@@ -5,7 +5,7 @@ import { portfolioSites } from "@/lib/portfolio";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Watch This Capital's market positions — independent, authoritative resources in UK regulated markets where trust is structurally absent.",
+    "Watch This Capital's market positions — ventures at the intersection of Deep Tech, AI, SaaS, and strategic media where we architect, scale, and sustain category leaders.",
 };
 
 export default function PortfolioPage() {
@@ -31,10 +31,9 @@ export default function PortfolioPage() {
               </span>
             </h1>
             <p className="text-lg text-on-surface-variant max-w-xl leading-relaxed">
-              Each represents a regulated market where trust is structurally
-              absent. We identified the gap, built the authoritative resource,
-              and own it — with fully disclosed, editorially-independent
-              commercial relationships.
+              Each represents a deliberate bet at the intersection of
+              intelligence, infrastructure, or information. We identified the
+              opportunity, built the authoritative position, and own it.
             </p>
           </div>
 
