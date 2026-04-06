@@ -95,23 +95,38 @@
 }
 
 .hero-gradient-text {
-  background: linear-gradient(135deg, #26c6da 0%, #0097a7 100%);
+  background: linear-gradient(135deg, #26c6da 0%, #00e5ff 40%, #0097a7 100%);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: gradient-shift 6s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(38,198,218,0.1); }
+  50%       { box-shadow: 0 0 40px rgba(38,198,218,0.25), 0 0 80px rgba(0,151,167,0.1); }
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #26c6da 0%, #0097a7 100%);
+  background: linear-gradient(135deg, #26c6da 0%, #00e5ff 50%, #0097a7 100%);
+  background-size: 200% 200%;
   color: #003f47;
   font-weight: 700;
-  transition: box-shadow 0.3s ease, transform 0.2s ease, filter 0.2s ease;
+  transition: box-shadow 0.3s ease, transform 0.2s ease, filter 0.2s ease, background-position 0.4s ease;
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 36px rgba(0, 151, 167, 0.45);
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.4), 0 0 16px rgba(38, 198, 218, 0.5);
   transform: translateY(-1px);
-  filter: brightness(1.08);
+  filter: brightness(1.1);
+  background-position: right center;
 }
 
 .btn-primary:active {

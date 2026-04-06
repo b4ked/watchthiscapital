@@ -28,10 +28,12 @@ export default function PillarsGrid({ pillars }: { pillars: Pillar[] }) {
             ease: EASE,
           }}
           whileHover={{
-            y: -5,
-            boxShadow: "0 0 24px rgba(38,198,218,0.07)",
+            y: -8,
+            boxShadow: "0 0 48px rgba(38,198,218,0.16), 0 16px 40px rgba(0,0,0,0.4)",
+            borderColor: "rgba(38,198,218,0.25)",
             transition: { duration: 0.25 },
           }}
+          style={{ borderColor: "rgba(255,255,255,0.03)", border: "1px solid" }}
           className="bg-surface-container p-8 rounded-xl"
         >
           <motion.div

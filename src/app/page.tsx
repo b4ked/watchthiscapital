@@ -92,7 +92,7 @@ export default function HomePage() {
                 site.domain === "soletraderguide.co.uk" ? (
                   /* ── Featured card: SoleTraderGuide ── */
                   <FadeUp key={site.domain} delay={i * 0.08}>
-                    <div className="bg-surface-container-low rounded-2xl border border-[#0d6e6e]/30 hover:border-[#0d6e6e]/60 transition-all duration-300 overflow-hidden hover:shadow-[0_0_48px_rgba(13,110,110,0.12)] group">
+                    <div className="bg-surface-container-low rounded-2xl border border-[#0d6e6e]/30 hover:border-[#0d6e6e]/80 transition-all duration-300 overflow-hidden hover:shadow-[0_0_64px_rgba(13,110,110,0.28),0_0_24px_rgba(13,150,80,0.15)] group">
                       <div className="flex flex-col lg:flex-row">
                         {/* Brand panel */}
                         <div className="bg-[#0d6e6e]/10 border-b lg:border-b-0 lg:border-r border-[#0d6e6e]/20 p-8 lg:p-10 flex flex-col justify-between gap-8 lg:w-72 shrink-0">
@@ -158,7 +158,7 @@ export default function HomePage() {
                             href={site.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#26c6da] hover:text-primary transition-colors w-fit"
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest w-fit border border-[#0d6e6e] bg-[#0d6e6e]/20 text-[#26c6da] hover:bg-[#0d6e6e]/40 hover:border-[#26c6da] hover:shadow-[0_0_20px_rgba(13,110,110,0.5)] active:scale-95 active:shadow-[0_0_32px_rgba(13,110,110,0.7)] transition-all duration-200 font-headline"
                           >
                             Visit site <ArrowRight size={12} />
                           </Link>

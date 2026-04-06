@@ -35,10 +35,10 @@ export default function PortfolioCard({ site }: PortfolioCardProps) {
     <motion.div
       className="group bg-surface-container-low rounded-xl p-8 flex flex-col gap-5 border border-white/5"
       whileHover={{
-        y: -6,
-        boxShadow: "0 0 32px rgba(38, 198, 218, 0.08), 0 16px 40px rgba(0,0,0,0.3)",
-        borderColor: "rgba(38, 198, 218, 0.15)",
-        transition: { duration: 0.28, ease: "easeOut" },
+        y: -8,
+        boxShadow: "0 0 48px rgba(38, 198, 218, 0.18), 0 20px 48px rgba(0,0,0,0.4)",
+        borderColor: "rgba(38, 198, 218, 0.35)",
+        transition: { duration: 0.25, ease: "easeOut" },
       }}
       initial={{ borderColor: "rgba(255,255,255,0.05)" }}
     >

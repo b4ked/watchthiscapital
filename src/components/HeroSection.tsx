@@ -41,7 +41,7 @@ export default function HeroSection({ liveSitesCount }: HeroSectionProps) {
   return (
     <section
       ref={ref}
-      className="relative min-h-[860px] flex items-center px-6 md:px-10 overflow-hidden"
+      className="relative min-h-[860px] flex items-start lg:items-center px-6 md:px-10 overflow-hidden"
     >
       {/* Parallax blobs */}
       <motion.div
@@ -53,7 +53,7 @@ export default function HeroSection({ liveSitesCount }: HeroSectionProps) {
         className="absolute bottom-0 left-1/4 w-64 h-64 bg-secondary-container/5 blur-[80px] rounded-full pointer-events-none"
       />
 
-      <div className="max-w-screen-xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      <div className="max-w-screen-xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center pt-16 lg:pt-0 pb-16">
         {/* Left — staggered text entrance */}
         <motion.div
           className="lg:col-span-7 z-10"

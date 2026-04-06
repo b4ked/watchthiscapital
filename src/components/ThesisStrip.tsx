@@ -44,7 +44,13 @@ export default function ThesisStrip() {
               delay: i * 0.14,
               ease: EASE,
             }}
-            whileHover={{ y: -6, transition: { duration: 0.25 } }}
+            whileHover={{
+              y: -8,
+              boxShadow: card.variant === "accent"
+                ? "0 0 48px rgba(0,151,167,0.45), 0 20px 48px rgba(0,0,0,0.4)"
+                : "0 0 40px rgba(38,198,218,0.14), 0 16px 40px rgba(0,0,0,0.35)",
+              transition: { duration: 0.25 },
+            }}
             className={`p-10 rounded-2xl flex flex-col justify-between cursor-default ${
               card.variant === "accent"
                 ? "bg-primary-container text-white"
