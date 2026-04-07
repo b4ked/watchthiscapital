@@ -13,6 +13,7 @@ const siteLinks = [
   { href: "/about", label: "About" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/contact", label: "Contact" },
+  { href: "/media", label: "Media Kit" },
 ];
 
 export default function Footer() {
