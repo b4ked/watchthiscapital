@@ -2,6 +2,16 @@ import type { PortfolioSite } from "@/types";
 
 export const portfolioSites: PortfolioSite[] = [
   {
+    name: "Parry Technologies",
+    domain: "parrytech.co",
+    url: "https://parrytech.co",
+    description:
+      "The technology arm of Watch This Capital. Parry Technologies engineers AI-native platforms across high-stakes sectors — clinical NLP, algorithmic trading infrastructure, and compliance tooling. Where WTC identifies a market, Parry Technologies builds the deep tech to own it.",
+    category: "Deep Tech",
+    status: "live",
+    launchYear: 2024,
+  },
+  {
     name: "SoleTraderGuide",
     domain: "soletraderguide.co.uk",
     url: "https://soletraderguide.co.uk",
