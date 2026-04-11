@@ -22,6 +22,16 @@ export const portfolioSites: PortfolioSite[] = [
     launchYear: 2025,
   },
   {
+    name: "AI Voice Review",
+    domain: "aivoicereview.com",
+    url: "https://aivoicereview.com",
+    description:
+      "The AI voice generation market is a $5B category with no independent review authority. We are building the go-to resource — hands-on tests with real paid credits, honest comparisons across ElevenLabs, Murf, PlayHT and more, with no sponsored rankings and no marketing spin.",
+    category: "AI & SaaS Reviews",
+    status: "live",
+    launchYear: 2026,
+  },
+  {
     name: "Equity Release Guide",
     domain: "equityreleaseguide.co.uk",
     url: "https://equityreleaseguide.co.uk",

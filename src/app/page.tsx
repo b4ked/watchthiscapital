@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Globe, Shield, TrendingUp } from "lucide-react";
 import PortfolioCard from "@/components/PortfolioCard";
 import STGFeaturedCard from "@/components/STGFeaturedCard";
+import AIVRFeaturedCard from "@/components/AIVRFeaturedCard";
 import HeroSection from "@/components/HeroSection";
 import FadeUp from "@/components/FadeUp";
 import { portfolioSites } from "@/lib/portfolio";
@@ -93,6 +94,10 @@ export default function HomePage() {
                 site.domain === "soletraderguide.co.uk" ? (
                   <FadeUp key={site.domain} delay={i * 0.08}>
                     <STGFeaturedCard site={site} />
+                  </FadeUp>
+                ) : site.domain === "aivoicereview.com" ? (
+                  <FadeUp key={site.domain} delay={i * 0.08}>
+                    <AIVRFeaturedCard site={site} />
                   </FadeUp>
                 ) : (
                   <FadeUp key={site.domain} delay={i * 0.08}>
