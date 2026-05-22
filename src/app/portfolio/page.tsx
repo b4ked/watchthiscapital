@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PortfolioCard from "@/components/PortfolioCard";
 import STGFeaturedCard from "@/components/STGFeaturedCard";
 import AIVRFeaturedCard from "@/components/AIVRFeaturedCard";
+import MSCFeaturedCard from "@/components/MSCFeaturedCard";
 import FadeUp from "@/components/FadeUp";
 import { portfolioSites } from "@/lib/portfolio";
 
@@ -83,6 +84,10 @@ export default function PortfolioPage() {
                   ) : site.domain === "aivoicereview.com" ? (
                     <FadeUp key={site.domain} delay={i * 0.08}>
                       <AIVRFeaturedCard site={site} />
+                    </FadeUp>
+                  ) : site.domain === "mysoftwarecompare.com" ? (
+                    <FadeUp key={site.domain} delay={i * 0.08}>
+                      <MSCFeaturedCard site={site} />
                     </FadeUp>
                   ) : (
                     <FadeUp key={site.domain} delay={i * 0.1}>

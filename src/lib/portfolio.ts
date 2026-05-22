@@ -32,6 +32,16 @@ export const portfolioSites: PortfolioSite[] = [
     launchYear: 2026,
   },
   {
+    name: "MySoftwareCompare",
+    domain: "mysoftwarecompare.com",
+    url: "https://mysoftwarecompare.com",
+    description:
+      "The $500B business software market is full of vendor noise and affiliate padding. We built the independent comparison layer — hands-on reviews across CRM, email, accounting, support, and operations software, with no sponsored rankings and no agenda beyond accuracy.",
+    category: "Software Reviews",
+    status: "live",
+    launchYear: 2026,
+  },
+  {
     name: "Equity Release Guide",
     domain: "equityreleaseguide.co.uk",
     url: "https://equityreleaseguide.co.uk",
