@@ -1,111 +1,109 @@
 import type { Metadata } from "next";
-import { Mail, Building2 } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import FadeUp from "@/components/FadeUp";
+import PageHero from "@/components/PageHero";
+import { EMAIL_GENERAL, EMAIL_SERVICE, STATUS_NOTE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Partner with Watch This Capital. We work with Deep Tech founders, software operators, and commercial partners building at the intersection of intelligence and infrastructure.",
+    "Contact Watch This Capital about a business workflow you would like an AI agent to run, or with a general enquiry.",
 };
+
+const useful = [
+  "What the workflow is, and roughly how often it happens",
+  "Where the information comes from and where it needs to end up",
+  "Who checks the work today",
+];
 
 export default function ContactPage() {
   return (
-    <main className="pt-20">
-      {/* ── Hero ── */}
-      <section className="relative px-6 md:px-10 py-28 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-container/10 blur-[100px] rounded-full pointer-events-none" />
-        <div className="max-w-screen-xl mx-auto">
-          <FadeUp className="max-w-2xl">
-            <span className="inline-block py-1 px-3 mb-6 border border-primary/20 bg-primary/5 text-primary text-[10px] font-bold tracking-widest uppercase rounded-sm">
-              Contact
-            </span>
-            <h1 className="text-5xl md:text-7xl font-headline font-bold leading-[0.9] tracking-tighter text-white mb-8">
-              Talk to us.
-            </h1>
-            <p className="text-xl text-on-surface-variant font-light leading-relaxed">
-              We work with Deep Tech founders, software operators, and
-              commercial partners across AI, SaaS, and information services. We
-              also hear from readers and users of our portfolio sites.
-            </p>
-          </FadeUp>
-        </div>
-      </section>
+    <main id="main">
+      <PageHero
+        label="Contact"
+        title="Tell us about a workflow."
+        intro="If your business has a routine, information-heavy process you would like an agent to run, this is the place to start."
+      />
 
-      {/* ── Contact options ── */}
-      <section className="py-20 px-6 md:px-10 bg-surface-container-low">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
-            {/* General */}
-            <FadeUp delay={0}>
-              <div className="bg-surface-container p-8 rounded-xl flex flex-col gap-5 h-full hover:shadow-[0_0_24px_rgba(38,198,218,0.06)] transition-shadow duration-300">
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Mail size={20} className="text-primary" />
-                </div>
-                <div>
-                  <h2 className="text-xl font-headline font-bold text-white mb-3">
-                    General enquiries
-                  </h2>
-                  <p className="text-sm text-on-surface-variant leading-relaxed">
-                    Questions about Watch This Capital, our editorial approach, or
-                    to report an inaccuracy on one of our sites.
-                  </p>
-                </div>
-                <a
-                  href="mailto:hello@watchthiscapital.com"
-                  className="text-sm font-bold text-primary hover:text-primary-fixed transition-colors font-headline uppercase tracking-widest"
-                >
-                  hello@watchthiscapital.com
-                </a>
+      <section className="section">
+        <div className="shell py-16 md:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 border-t border-l border-line">
+            {/* Service */}
+            <FadeUp className="lg:col-span-7 border-r border-b border-line p-7 md:p-12">
+              <p className="label label-accent mb-8">01 Service enquiries</p>
+              <h2 className="heading text-3xl md:text-4xl mb-5">
+                For businesses interested in the agent service.
+              </h2>
+              <p className="text-on-surface-variant leading-relaxed max-w-lg mb-8">
+                {STATUS_NOTE} We are glad to hear about the work you have in
+                mind, and we will tell you plainly whether it is the kind of
+                process an agent would suit.
+              </p>
+              <a
+                href={`mailto:${EMAIL_SERVICE}?subject=Workflow%20enquiry`}
+                className="group inline-flex items-center gap-2 font-mono text-base sm:text-lg text-primary break-all"
+              >
+                <span className="underline underline-offset-4 decoration-primary/40 group-hover:decoration-primary">
+                  {EMAIL_SERVICE}
+                </span>
+                <ArrowUpRight size={18} className="shrink-0" />
+              </a>
+
+              <div className="mt-12 border-t border-line-strong pt-6">
+                <h3 className="label mb-4">Useful to include</h3>
+                <ul className="space-y-2.5">
+                  {useful.map((u, i) => (
+                    <li
+                      key={u}
+                      className="flex gap-4 text-sm text-on-surface-variant leading-relaxed"
+                    >
+                      <span className="label pt-0.5">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span>{u}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </FadeUp>
 
-            {/* Commercial */}
-            <FadeUp delay={0.1}>
-              <div className="bg-surface-container p-8 rounded-xl flex flex-col gap-5 h-full hover:shadow-[0_0_24px_rgba(38,198,218,0.06)] transition-shadow duration-300">
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Building2 size={20} className="text-primary" />
-                </div>
-                <div>
-                  <h2 className="text-xl font-headline font-bold text-white mb-3">
-                    Commercial partnerships
-                  </h2>
-                  <p className="text-sm text-on-surface-variant leading-relaxed">
-                    If you are building at the intersection of Deep Tech, AI,
-                    SaaS, or strategic media — and want a partner who operates,
-                    not just allocates capital — let&apos;s talk.
-                  </p>
-                </div>
-                <a
-                  href="mailto:partnerships@watchthiscapital.com"
-                  className="text-sm font-bold text-primary hover:text-primary-fixed transition-colors font-headline uppercase tracking-widest"
-                >
-                  partnerships@watchthiscapital.com
-                </a>
-              </div>
+            {/* General */}
+            <FadeUp
+              delay={0.08}
+              className="lg:col-span-5 border-r border-b border-line p-7 md:p-12 bg-surface-container-lowest"
+            >
+              <p className="label mb-8">02 General enquiries</p>
+              <h2 className="heading text-2xl mb-5">Everything else.</h2>
+              <p className="text-on-surface-variant leading-relaxed mb-8">
+                Questions about the company, press requests, or to report an
+                inaccuracy on one of our{" "}
+                <Link href="/ventures" className="link">
+                  information sites
+                </Link>
+                .
+              </p>
+              <a
+                href={`mailto:${EMAIL_GENERAL}`}
+                className="group inline-flex items-center gap-2 font-mono text-base text-primary break-all"
+              >
+                <span className="underline underline-offset-4 decoration-primary/40 group-hover:decoration-primary">
+                  {EMAIL_GENERAL}
+                </span>
+                <ArrowUpRight size={16} className="shrink-0" />
+              </a>
+
+              <p className="mt-12 border-t border-line-strong pt-6 text-sm text-on-surface-variant leading-relaxed">
+                Our information sites carry affiliate links. Every commercial
+                relationship on them is disclosed, and being featured does not
+                buy a favourable assessment. See the{" "}
+                <Link href="/affiliate-disclosure" className="link">
+                  affiliate disclosure
+                </Link>
+                .
+              </p>
             </FadeUp>
           </div>
-
-          {/* Note */}
-          <FadeUp delay={0.2} className="max-w-3xl mt-10">
-            <div className="bg-surface-container-high rounded-xl p-6 border border-outline-variant/20">
-              <p className="text-sm text-on-surface-variant leading-relaxed">
-                <span className="text-white font-semibold">
-                  On commercial relationships:
-                </span>{" "}
-                Every partnership and affiliate arrangement on our sites is
-                disclosed. Being featured does not guarantee a positive assessment.
-                Our editorial judgement is not for sale — that is what makes a
-                listing on one of our sites worth having. See our{" "}
-                <a
-                  href="/affiliate-disclosure"
-                  className="text-primary underline font-medium"
-                >
-                  Affiliate Disclosure
-                </a>{" "}
-                for full details.
-              </p>
-            </div>
-          </FadeUp>
         </div>
       </section>
     </main>

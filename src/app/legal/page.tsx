@@ -13,7 +13,7 @@ export default function LegalPage() {
       <p>
         This page contains the registered company information for Watch This Capital Ltd, the
         entity that operates this website and the portfolio of sites listed on our{" "}
-        <a href="/portfolio">Portfolio page</a>.
+        <a href="/ventures">Ventures page</a>.
       </p>
 
       <h2>Company details</h2>
@@ -104,7 +104,7 @@ export default function LegalPage() {
       </ul>
       <p>
         This list will be updated as additional sites within the portfolio are launched.
-        See our <a href="/portfolio">Portfolio page</a> for the latest information.
+        See our <a href="/ventures">Ventures page</a> for the latest information.
       </p>
 
       <h2>Complaints</h2>

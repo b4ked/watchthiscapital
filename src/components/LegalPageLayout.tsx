@@ -10,14 +10,17 @@ export default function LegalPageLayout({
   children,
 }: LegalPageLayoutProps) {
   return (
-    <main className="py-12 md:py-16">
-      <div className="page-container">
-        <div className="max-w-3xl mx-auto">
-          <header className="mb-10 pb-6 border-b border-slate-200">
-            <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">{title}</h1>
-            <p className="text-sm text-slate-500">Last updated: {lastUpdated}</p>
+    <main id="main">
+      <div className="shell pt-32 pb-20 md:pt-40 md:pb-28">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8">
+          <header className="md:col-span-3 mb-10">
+            <p className="label label-accent mb-3">Legal</p>
+            <p className="label">Last updated: {lastUpdated}</p>
           </header>
-          <div className="prose-legal">{children}</div>
+          <div className="md:col-span-9 max-w-3xl">
+            <h1 className="heading text-4xl md:text-5xl mb-10">{title}</h1>
+            <div className="prose-legal">{children}</div>
+          </div>
         </div>
       </div>
     </main>

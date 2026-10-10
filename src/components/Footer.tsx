@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { STATUS } from "@/lib/site";
 
 const legalLinks = [
   { href: "/privacy-policy", label: "Privacy Policy" },
@@ -10,9 +11,10 @@ const legalLinks = [
 ];
 
 const siteLinks = [
+  { href: "/service", label: "Service" },
   { href: "/about", label: "About" },
-  { href: "/portfolio", label: "Portfolio" },
   { href: "/contact", label: "Contact" },
+  { href: "/ventures", label: "Ventures" },
   { href: "/media", label: "Media Kit" },
 ];
 
@@ -20,37 +22,41 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-surface-container-lowest border-t border-white/5">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-6 md:px-10 py-16 max-w-screen-xl mx-auto">
+    <footer className="bg-surface-container-lowest border-t border-line">
+      <div className="shell grid grid-cols-2 md:grid-cols-12 gap-x-8 gap-y-12 py-16">
         {/* Brand */}
-        <div className="md:col-span-2">
-          <div className="mb-4">
+        <div className="col-span-2 md:col-span-6">
+          <div className="flex items-center gap-3 mb-5">
             <Image
-              src="/logo-transparent.png"
-              alt="Watch This Capital"
-              width={180}
-              height={90}
-              className="opacity-90 object-contain"
+              src="/mark.png"
+              alt=""
+              width={796}
+              height={431}
+              className="h-7 w-auto"
             />
+            <span className="font-headline font-medium text-white tracking-tight">
+              Watch This <span className="text-on-surface-variant">Capital</span>
+            </span>
           </div>
           <p className="text-sm leading-relaxed text-on-surface-variant max-w-sm">
-            Architecting high-impact ventures at the intersection of
-            intelligence and infrastructure — from Deep Tech and AI to
-            strategic media and information services.
+            Managed AI agents for routine business workflows. Sourced, approved
+            by a person, and scored before they are trusted.
+          </p>
+          <p className="label mt-6 flex items-center gap-2.5">
+            <span className="inline-block w-1.5 h-1.5 bg-primary" />
+            Service status: {STATUS}
           </p>
         </div>
 
         {/* Company */}
-        <div>
-          <h4 className="text-white font-headline font-bold mb-5 text-xs uppercase tracking-widest">
-            Company
-          </h4>
+        <div className="md:col-span-3">
+          <h2 className="label mb-5">Company</h2>
           <ul className="space-y-3">
             {siteLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm text-on-surface-variant hover:text-primary transition-colors"
+                  className="text-sm text-on-surface hover:text-primary transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -60,16 +66,14 @@ export default function Footer() {
         </div>
 
         {/* Legal */}
-        <div>
-          <h4 className="text-white font-headline font-bold mb-5 text-xs uppercase tracking-widest">
-            Legal
-          </h4>
+        <div className="md:col-span-3">
+          <h2 className="label mb-5">Legal</h2>
           <ul className="space-y-3">
             {legalLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm text-on-surface-variant hover:text-primary transition-colors"
+                  className="text-sm text-on-surface hover:text-primary transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -80,13 +84,11 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="px-6 md:px-10 py-6 border-t border-white/5 max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-on-surface-variant/60">
-        <span>© {currentYear} Watch This Capital Ltd. All rights reserved.</span>
-        <span>
-          Registered in England and Wales · Company number:{" "}
-          <span className="text-on-surface-variant">[pending]</span> · ICO:{" "}
-          <span className="text-on-surface-variant">[pending]</span>
-        </span>
+      <div className="border-t border-line">
+        <div className="shell py-6 flex flex-col md:flex-row justify-between gap-2 label !normal-case !tracking-normal text-xs">
+          <span>© {currentYear} Watch This Capital Ltd. All rights reserved.</span>
+          <span>United Kingdom</span>
+        </div>
       </div>
     </footer>
   );

@@ -1,185 +1,220 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Globe, Shield, TrendingUp } from "lucide-react";
-import PortfolioCard from "@/components/PortfolioCard";
-import STGFeaturedCard from "@/components/STGFeaturedCard";
-import AIVRFeaturedCard from "@/components/AIVRFeaturedCard";
-import HeroSection from "@/components/HeroSection";
+import { ArrowRight } from "lucide-react";
+import AgentRun from "@/components/AgentRun";
+import CtaBand from "@/components/CtaBand";
 import FadeUp from "@/components/FadeUp";
-import { portfolioSites } from "@/lib/portfolio";
-import ThesisStrip from "@/components/ThesisStrip";
-import PillarsGrid from "@/components/PillarsGrid";
+import SectionHead from "@/components/SectionHead";
+import { STATUS, STATUS_NOTE, controls, steps, workflows } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Watch This Capital — Deep Tech, AI & Digital Infrastructure",
+  title: { absolute: "Watch This Capital — Managed AI agents for business workflows" },
   description:
-    "Watch This Capital architects, scales, and sustains high-impact ventures at the intersection of intelligence and infrastructure — from AI and SaaS to strategic media.",
+    "AI agents that run your routine workflows, built and operated for you. For businesses with repetitive, information-heavy processes. Every output is sourced, approved by a person and scored.",
 };
 
-const pillars = [
-  {
-    icon: <Shield size={20} className="text-primary" />,
-    title: "Trust first",
-    description:
-      "We would rather lose a commercial arrangement than back something we cannot stand behind. Every relationship is disclosed. Our judgement is not for sale.",
-  },
-  {
-    icon: <Globe size={20} className="text-primary" />,
-    title: "Clarity over cleverness",
-    description:
-      "The markets we operate in are complex by nature. Our job is to make them navigable — whether that is a sole trader choosing compliance software or a founder evaluating a sector. Fifteen minutes and something important to decide. We build for that person.",
-  },
-  {
-    icon: <TrendingUp size={20} className="text-primary" />,
-    title: "Built to last",
-    description:
-      "We build for depth, not volume. One well-researched, accurately maintained position will compound for years. That is what earns category authority — and holds it.",
-  },
+const readout = [
+  { label: "What", value: "Managed AI agents" },
+  { label: "For", value: "Routine business workflows" },
+  { label: "Based", value: "United Kingdom" },
+  { label: "Status", value: STATUS },
 ];
 
 export default function HomePage() {
-  const liveSites = portfolioSites.filter((s) => s.status === "live");
-  const pipelineSites = portfolioSites.filter((s) => s.status !== "live");
-
   return (
-    <main className="pt-20">
+    <main id="main">
       {/* ── Hero ── */}
-      <HeroSection liveSitesCount={liveSites.length} />
-
-      {/* ── Thesis strip ── */}
-      <ThesisStrip />
-
-      {/* ── Mission ── */}
-      <section className="py-28 px-6 md:px-10 overflow-hidden">
-        <FadeUp className="max-w-3xl mx-auto text-center relative">
-          <div className="absolute -top-10 left-1/2 -translate-x-1/2 text-[140px] font-black text-white/[0.03] select-none font-headline leading-none pointer-events-none">
-            THESIS
-          </div>
-          <h2 className="text-3xl md:text-4xl font-headline font-bold leading-tight mb-8 relative z-10 text-white">
-            We look for the same pattern every time.
-          </h2>
-          <div className="w-12 h-0.5 bg-primary mx-auto mb-8" />
-          <p className="text-base text-on-surface-variant leading-relaxed max-w-xl mx-auto">
-            A sector under structural pressure. Audiences making high-stakes
-            decisions. No category leader yet built. When we find that pattern —
-            at the intersection of intelligence, infrastructure, or information
-            — we move.
-          </p>
-        </FadeUp>
-      </section>
-
-      {/* ── Live portfolio ── */}
-      {liveSites.length > 0 && (
-        <section className="py-20 px-6 md:px-10">
-          <div className="max-w-screen-xl mx-auto">
-            <FadeUp className="flex justify-between items-end mb-12">
-              <div>
-                <span className="text-primary font-headline uppercase tracking-[0.2em] font-bold text-xs block mb-3">
-                  Live now
-                </span>
-                <h2 className="text-4xl font-headline font-bold text-white">
-                  Active positions
-                </h2>
-              </div>
-              <Link
-                href="/portfolio"
-                className="hidden md:flex items-center gap-2 text-primary hover:gap-3 transition-all duration-300 text-sm font-headline uppercase tracking-widest font-bold"
-              >
-                All positions <ArrowRight size={14} />
-              </Link>
-            </FadeUp>
-
-            <div className="flex flex-col gap-6">
-              {liveSites.map((site, i) =>
-                site.domain === "soletraderguide.co.uk" ? (
-                  <FadeUp key={site.domain} delay={i * 0.08}>
-                    <STGFeaturedCard site={site} />
-                  </FadeUp>
-                ) : site.domain === "aivoicereview.com" ? (
-                  <FadeUp key={site.domain} delay={i * 0.08}>
-                    <AIVRFeaturedCard site={site} />
-                  </FadeUp>
-                ) : (
-                  <FadeUp key={site.domain} delay={i * 0.08}>
-                    <PortfolioCard site={site} />
-                  </FadeUp>
-                )
-              )}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ── Pipeline ── */}
-      {pipelineSites.length > 0 && (
-        <section className="py-20 px-6 md:px-10">
-          <div className="max-w-screen-xl mx-auto">
-            <FadeUp className="mb-12">
-              <span className="text-primary font-headline uppercase tracking-[0.2em] font-bold text-xs block mb-3">
-                In development
-              </span>
-              <h2 className="text-4xl font-headline font-bold text-white">
-                Markets we are moving into
-              </h2>
-            </FadeUp>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {pipelineSites.map((site, i) => (
-                <FadeUp key={site.domain} delay={i * 0.1}>
-                  <PortfolioCard site={site} />
-                </FadeUp>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ── How we operate ── */}
-      <section className="py-20 px-6 md:px-10 bg-surface-container-low">
-        <div className="max-w-screen-xl mx-auto">
-          <FadeUp className="mb-12">
-            <span className="text-primary font-headline uppercase tracking-[0.2em] font-bold text-xs block mb-3">
-              How we operate
-            </span>
-            <h2 className="text-4xl font-headline font-bold text-white">
-              The standards every position is held to
-            </h2>
-          </FadeUp>
-          <PillarsGrid pillars={pillars} />
-        </div>
-      </section>
-
-      {/* ── CTA ── */}
-      <section className="py-24 px-6 md:px-10">
-        <div className="max-w-screen-xl mx-auto">
-          <FadeUp>
-            <div className="bg-surface-container-low rounded-3xl p-12 md:p-20 overflow-hidden relative border border-white/5 hover:border-primary/10 transition-colors duration-500">
-              <div className="absolute top-0 right-0 w-1/2 h-full bg-primary-container/5 blur-[100px] rounded-full pointer-events-none" />
-              <div className="relative z-10 max-w-2xl">
-                <h2 className="text-4xl font-headline font-bold mb-6 text-white">
-                  Partner with us.
-                </h2>
-                <p className="text-lg text-on-surface-variant leading-relaxed mb-4">
-                  We take positions where structural change creates demand for a
-                  category-defining resource. If you are building something at
-                  the intersection of Deep Tech, AI, SaaS, or strategic media —
-                  and want a partner who operates, not just allocates capital —
-                  we want to hear from you.
-                </p>
-                <p className="text-sm text-on-surface-variant/70 leading-relaxed mb-10">
-                  We partner selectively. We operate with conviction. That is the
-                  point.
-                </p>
-                <Link
-                  href="/contact"
-                  className="btn-primary inline-flex items-center gap-2 px-8 py-4 rounded-lg text-sm uppercase tracking-widest font-headline"
-                >
-                  Get in touch <ArrowRight size={16} />
+      <section className="relative overflow-hidden">
+        <div className="grid-field absolute inset-0 pointer-events-none" aria-hidden="true" />
+        <div className="shell relative pt-28 pb-14 md:pt-40 md:pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 gap-y-14 items-center">
+            <div className="lg:col-span-7">
+              <p className="label label-accent mb-6">
+                Managed AI agents for business workflows
+              </p>
+              <h1 className="display text-[2.6rem] sm:text-6xl lg:text-[4.5rem] mb-7">
+                AI agents that run your routine workflows, built and operated
+                for you.
+              </h1>
+              <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed max-w-xl mb-9">
+                For businesses with repetitive, information-heavy processes. We
+                build the agent, run it and answer for its accuracy. Your team
+                approves the work.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/contact" className="btn-primary">
+                  Discuss a workflow <ArrowRight size={14} />
+                </Link>
+                <Link href="/service" className="btn-secondary">
+                  How the service works
                 </Link>
               </div>
             </div>
+
+            <div className="lg:col-span-5">
+              <AgentRun />
+            </div>
+          </div>
+        </div>
+
+        {/* Readout strip */}
+        <div className="section relative">
+          <dl className="shell grid grid-cols-2 md:grid-cols-4">
+            {readout.map((r, i) => (
+              <div
+                key={r.label}
+                className={`py-5 md:py-6 ${
+                  i % 2 === 1 ? "pl-5 border-l border-line" : ""
+                } ${i > 1 ? "border-t border-line md:border-t-0" : ""} ${
+                  i === 2 ? "md:pl-5 md:border-l" : ""
+                }`}
+              >
+                <dt className="label mb-1.5">{r.label}</dt>
+                <dd
+                  className={`font-headline text-[15px] md:text-base ${
+                    r.label === "Status" ? "text-primary" : "text-white"
+                  }`}
+                >
+                  {r.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* ── 01 Workflows ── */}
+      <section className="section">
+        <div className="shell py-20 md:py-28">
+          <SectionHead
+            index="01"
+            label="Workflows"
+            title="Four kinds of work, found in almost every business."
+            intro="We are starting with processes that are frequent, rule-bound and built on information the business already holds."
+          />
+          <ol className="border-t border-line">
+            {workflows.map((w, i) => (
+              <li key={w.id} className="border-b border-line">
+                <FadeUp
+                  delay={i * 0.05}
+                  className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-2 py-7 md:py-9"
+                >
+                  <span className="label label-accent md:col-span-3 md:pt-1.5">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="heading text-xl md:text-2xl md:col-span-3">
+                    {w.name}
+                  </h3>
+                  <p className="text-on-surface-variant leading-relaxed md:col-span-6 max-w-xl">
+                    {w.summary}
+                  </p>
+                </FadeUp>
+              </li>
+            ))}
+          </ol>
+          <FadeUp className="mt-8 md:grid md:grid-cols-12 md:gap-x-8">
+            <Link
+              href="/service#workflows"
+              className="link text-sm md:col-start-4 md:col-span-9"
+            >
+              What each agent does, and what stays with your team
+            </Link>
           </FadeUp>
         </div>
       </section>
+
+      {/* ── 02 Controls ── */}
+      <section className="section bg-surface-container-lowest">
+        <div className="shell py-20 md:py-28">
+          <SectionHead
+            index="02"
+            label="Controls"
+            title="Agents do the work. People keep watch."
+            intro="An agent is only useful if you can check it quickly and stop it easily. Three controls are designed into every agent."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-line">
+            {controls.map((c, i) => (
+              <FadeUp
+                key={c.id}
+                delay={i * 0.08}
+                className="border-r border-b border-line p-7 md:p-9 flex flex-col"
+              >
+                <p className="label mb-10">
+                  <span className="label-accent">
+                    {String.fromCharCode(65 + i)}
+                  </span>
+                </p>
+                <h3 className="heading text-2xl mb-3">{c.name}</h3>
+                <p className="text-white leading-snug mb-4">{c.summary}</p>
+                <p className="text-sm text-on-surface-variant leading-relaxed">
+                  {c.detail}
+                </p>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 03 Engagement ── */}
+      <section className="section">
+        <div className="shell py-20 md:py-28">
+          <SectionHead
+            index="03"
+            label="Engagement"
+            title="One workflow at a time."
+            intro="An engagement starts small and stays measurable. Each step has a clear output before the next begins."
+          />
+          <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+            {steps.map((s, i) => (
+              <li key={s.name}>
+                <FadeUp delay={i * 0.08}>
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="label label-accent">
+                      Step {i + 1}
+                    </span>
+                    <span className="h-px flex-1 bg-line-strong" />
+                  </div>
+                  <h3 className="heading text-xl mb-3">{s.name}</h3>
+                  <p className="text-sm text-on-surface-variant leading-relaxed">
+                    {s.detail}
+                  </p>
+                </FadeUp>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* ── 04 Status ── */}
+      <section className="section">
+        <div className="shell py-20 md:py-28">
+          <SectionHead
+            index="04"
+            label="Status"
+            title="Where we are."
+            intro={STATUS_NOTE}
+          />
+          <FadeUp className="md:grid md:grid-cols-12 md:gap-x-8">
+            <div className="md:col-start-4 md:col-span-9 max-w-2xl space-y-5 text-on-surface-variant leading-relaxed">
+              <p>
+                What this site describes is what we are building and how we
+                intend to run it. We will not publish results, customer names
+                or accuracy figures until there are real ones to publish.
+              </p>
+              <p>
+                The agents will be built on Claude, using the Claude Agent SDK
+                and MCP servers.{" "}
+                <Link href="/service" className="link">
+                  Read the full description of the service
+                </Link>
+                .
+              </p>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      <CtaBand />
     </main>
   );
 }
